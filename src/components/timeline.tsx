@@ -97,7 +97,7 @@ export const Timeline = () => {
 			>
 				<div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 					{/* TEXT - On top for mobile, left for desktop */}
-					<div className="flex flex-col justify-center space-y-8">
+					<div className="flex flex-col justify-start space-y-8">
 						<div className="flex">
 							<span className="h-px bg-primary-300 w-[30px] relative top-3"></span>
 							<h6 className="uppercase text-primary font-semibold tracking-wider mx-2">
@@ -109,9 +109,12 @@ export const Timeline = () => {
 							Quienes Somos?
 						</h2>
 						<p className="max-w-lg text-lg leading-relaxed">
-							We are a team of highly skilled and experienced medical
-							professionals committed to a patient‑centred approach. Every
-							patient is unique — and so is our care.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis
+							ante sapien. Ut convallis luctus ipsum, non condimentum nulla
+							consequat sed. Curabitur aliquet mollis finibus. Fusce a ipsum
+							leo. Suspendisse fringilla nisl eget felis euismod maximus. Sed id
+							magna justo. Etiam vulputate libero quis velit tristique, vel
+							fringilla odio bibendum. Duis in lacus urna.
 						</p>
 						<Button
 							variant="ghost"
