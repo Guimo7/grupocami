@@ -118,30 +118,64 @@ export const siteConfig = {
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
 			icon: BiClinic,
+			tags: [
+				{
+					label: "Consulta Medica",
+					href: "/clinica/consulta-medica",
+				},
+				{
+					label: "Asesoria",
+					href: "/clinica/asesoria",
+				},
+				{
+					label: "Alquiler",
+					href: "/clinica/alquiler",
+				},
+				{
+					label: "Capacitaciones",
+					href: "/clinica/capacitaciones",
+				},
+			],
 		},
 		{
 			label: "Farmacurate",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
 			icon: LiaPillsSolid,
+			tags: [
+				{ label: "Empresas", href: "/farmacurate/empresas" },
+				{ label: "Kits", href: "/farmacurate/kits" },
+			],
 		},
 		{
 			label: "Laboratorio",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
 			icon: ImLab,
+			tags: [
+				{ label: "Servicios", href: "/laboratorio/servicios" },
+				{ label: "Haz tu cita", href: "/laboratorios/haz-tu-cita" },
+			],
 		},
 		{
 			label: "Spa",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
 			icon: PiTowel,
+			tags: [
+				{ label: "Servicios", href: "/spa/servicios" },
+				{ label: "Planes", href: "/spa/planes" },
+			],
 		},
 		{
 			label: "Importadora",
 			description:
 				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
 			icon: PiTruckTrailer,
+			tags: [
+				{ label: "Equipo", href: "/importadora/equipo" },
+				{ label: "Financiamiento", href: "/importadora/financiamiento" },
+			],
 		},
 	],
 	links: {
