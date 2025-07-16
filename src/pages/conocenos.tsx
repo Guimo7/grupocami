@@ -2,7 +2,7 @@ import { Card, CardBody, Image } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import DefaultLayout from "@/layouts/default";
 
-export default function AboutPage() {
+export default function ConocenosPage() {
 	return (
 		<DefaultLayout>
 			<div className="max-w-6xl mx-auto px-4 py-8">

@@ -13,6 +13,7 @@ import PlanesSpaPage from "@/pages/spa/planes";
 import EquipoPage from "@/pages/importadora/equipo";
 import FinanciamientoPage from "@/pages/importadora/financiamiento";
 import ContactanosPage from "@/pages/contactanos";
+import ConocenosPage from "@/pages/conocenos";
 
 function App() {
 	return (
@@ -37,6 +38,7 @@ function App() {
 				path="/importadora/financiamiento"
 			/>
 			<Route element={<ContactanosPage />} path="/contactanos" />
+			<Route element={<ConocenosPage />} path="/conocenos" />
 		</Routes>
 	);
 }
