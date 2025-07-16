@@ -6,6 +6,8 @@ import AlquilerPage from "@/pages/clinica/alquiler";
 import AsesoriaPage from "@/pages/clinica/asesoria";
 import CapacitacionesPage from "@/pages/clinica/capacitaciones";
 import ConsultaMedicaPage from "@/pages/clinica/consulta-medica";
+import EmpresasPage from "@/pages/farmacurate/empresas";
+import KitsPage from "@/pages/farmacurate/kits";
 import IndexPage from "@/pages/index";
 import ServicesPage from "@/pages/services";
 
@@ -18,6 +20,8 @@ function App() {
 			<Route element={<AsesoriaPage />} path="/clinica/asesoria" />
 			<Route element={<AlquilerPage />} path="/clinica/alquiler" />
 			<Route element={<CapacitacionesPage />} path="/clinica/capacitaciones" />
+			<Route element={<EmpresasPage />} path="/farmacurate/empresas" />
+			<Route element={<KitsPage />} path="/farmacurate/kits" />
 			<Route element={<ServicesPage />} path="/services" />
 			<Route element={<BlogPage />} path="/blog" />
 			<Route element={<AboutPage />} path="/conocenos" />
