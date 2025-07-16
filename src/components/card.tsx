@@ -33,7 +33,7 @@ export const Card = (props: ICardProps) => {
 			<CardFooter>
 				{tags.map((tag) => {
 					return (
-						<Link key={tag.label} to={tag.href}>
+						<Link key={tag.label} to={tag.href} target="_top">
 							<Chip
 								radius="sm"
 								classNames={{
