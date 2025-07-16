@@ -13,6 +13,8 @@ import ServiciosLaboratorioPage from "@/pages/laboratorio/servicios";
 import HazTuCitaPage from "@/pages/laboratorio/haz-tu-cita";
 import ServiciosSpaPage from "@/pages/spa/servicios";
 import PlanesSpaPage from "@/pages/spa/planes";
+import EquipoPage from "@/pages/importadora/equipo";
+import FinanciamientoPage from "@/pages/importadora/financiamiento";
 import ServicesPage from "@/pages/services";
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
 			<Route element={<HazTuCitaPage />} path="/laboratorios/haz-tu-cita" />
 			<Route element={<ServiciosSpaPage />} path="/spa/servicios" />
 			<Route element={<PlanesSpaPage />} path="/spa/planes" />
+			<Route element={<EquipoPage />} path="/importadora/equipo" />
+			<Route element={<FinanciamientoPage />} path="/importadora/financiamiento" />
 			<Route element={<ServicesPage />} path="/services" />
 			<Route element={<BlogPage />} path="/blog" />
 			<Route element={<AboutPage />} path="/conocenos" />
