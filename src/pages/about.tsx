@@ -1,6 +1,6 @@
-import { Image, Card, CardBody } from "@heroui/react";
-import DefaultLayout from "@/layouts/default";
+import { Card, CardBody, Image } from "@heroui/react";
 import { siteConfig } from "@/config/site";
+import DefaultLayout from "@/layouts/default";
 
 export default function AboutPage() {
 	return (

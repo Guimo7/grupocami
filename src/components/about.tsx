@@ -1,6 +1,5 @@
-import { siteConfig } from "@/config/site";
-
 import { Card, CardBody, Image } from "@heroui/react";
+import { siteConfig } from "@/config/site";
 
 export const About = () => {
 	return (

@@ -1,6 +1,6 @@
 import { BiClinic } from "react-icons/bi";
-import { LiaPillsSolid } from "react-icons/lia";
 import { ImLab } from "react-icons/im";
+import { LiaPillsSolid } from "react-icons/lia";
 import { PiTowel, PiTruckTrailer } from "react-icons/pi";
 
 export type SiteConfig = typeof siteConfig;

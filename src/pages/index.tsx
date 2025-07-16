@@ -1,9 +1,9 @@
-import DefaultLayout from "@/layouts/default";
-import { Carousel } from "@/components/carousel";
-import { siteConfig } from "@/config/site";
-import { Timeline } from "@/components/timeline";
-import { Card } from "@/components/card";
 import { About } from "@/components/about";
+import { Card } from "@/components/card";
+import { Carousel } from "@/components/carousel";
+import { Timeline } from "@/components/timeline";
+import { siteConfig } from "@/config/site";
+import DefaultLayout from "@/layouts/default";
 
 export default function IndexPage() {
 	return (

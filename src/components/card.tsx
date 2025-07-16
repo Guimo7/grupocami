@@ -1,8 +1,8 @@
 import {
-	Card as HeroCard,
-	CardHeader,
 	CardBody,
 	CardFooter,
+	CardHeader,
+	Card as HeroCard,
 } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Link } from "react-router-dom";

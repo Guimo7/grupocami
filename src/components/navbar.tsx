@@ -1,25 +1,25 @@
-import { useRef, useState, useEffect } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+	Dropdown,
+	DropdownItem,
+	DropdownMenu,
+	DropdownTrigger,
+} from "@heroui/dropdown";
 import {
 	Navbar as HeroNavbar,
+	Link as HeroUILink,
+	Image,
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
-	NavbarMenuToggle,
 	NavbarMenu,
 	NavbarMenuItem,
-	Link as HeroUILink,
+	NavbarMenuToggle,
 } from "@heroui/react";
-import {
-	Dropdown,
-	DropdownTrigger,
-	DropdownMenu,
-	DropdownItem,
-} from "@heroui/dropdown";
-import { Image } from "@heroui/react";
-import { Link } from "react-router-dom";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { clsx } from "clsx";
 import { animate } from "animejs";
+import { clsx } from "clsx";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
@@ -131,14 +131,18 @@ export const Navbar = () => {
 									</button>
 								</DropdownTrigger>
 								<DropdownMenu
-									className="bg-white dark:bg-gray-800 rounded-md shadow-lg p-2"
+									className="bg-white/95 backdrop-blur-sm rounded-lg p-1 min-w-[200px]"
 									onClose={() => setOpenSubmenuIndex(null)}
 								>
 									{item.submenu.map((subItem) => (
-										<DropdownItem key={subItem.href}>
+										<DropdownItem
+											key={subItem.href}
+											className="p-0 rounded-md"
+											textValue={subItem.label}
+										>
 											<Link
 												to={subItem.href}
-												className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+												className="block w-full px-4 py-3 text-sm font-medium text-foreground hover:text-primary rounded-md hover:bg-blue-200"
 												onClick={() => setOpenSubmenuIndex(null)}
 											>
 												{subItem.label}
@@ -196,12 +200,12 @@ export const Navbar = () => {
 										/>
 									</button>
 									{openSubmenuIndex === index && (
-										<div className="ml-4 flex flex-col gap-2">
+										<div className="ml-4 flex flex-col gap-1 mt-2">
 											{item.submenu.map((subItem) => (
 												<Link
 													key={subItem.href}
 													to={subItem.href}
-													className="block text-sm text-gray-700 dark:text-gray-200"
+													className="block text-sm text-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md hover:bg-primary/10"
 													onClick={() => setOpenSubmenuIndex(null)}
 												>
 													{subItem.label}

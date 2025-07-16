@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/react";
+import { useEffect, useRef, useState } from "react";
 
 const milestones = [
 	{
