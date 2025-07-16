@@ -1,11 +1,21 @@
-import { title, subtitle } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
-import { Card, CardBody, CardHeader, Button } from "@heroui/react";
-import { ImLab } from "react-icons/im";
-import { BiTime, BiShield, BiSupport, BiCheck } from "react-icons/bi";
-import { FaFlask, FaHeartbeat, FaUserMd, FaClipboardList } from "react-icons/fa";
-import { MdBloodtype, MdLocalHospital, MdSecurity, MdSchedule } from "react-icons/md";
+import { Button, Card, CardBody, CardHeader } from "@heroui/react";
+import { BiCheck, BiShield, BiSupport, BiTime } from "react-icons/bi";
+import {
+	FaClipboardList,
+	FaFlask,
+	FaHeartbeat,
+	FaUserMd,
+} from "react-icons/fa";
 import { GiMicroscope } from "react-icons/gi";
+import { ImLab } from "react-icons/im";
+import {
+	MdBloodtype,
+	MdLocalHospital,
+	MdSchedule,
+	MdSecurity,
+} from "react-icons/md";
+import { subtitle, title } from "@/components/primitives";
+import DefaultLayout from "@/layouts/default";
 
 export default function ServiciosPage() {
 	return (
@@ -21,9 +31,10 @@ export default function ServiciosPage() {
 							</h1>
 						</div>
 						<p className={subtitle({ class: "text-center mx-auto max-w-2xl" })}>
-							Análisis clínicos precisos y confiables con tecnología de vanguardia. 
-							Nuestro laboratorio cuenta con equipos modernos y personal altamente calificado 
-							para brindarte resultados exactos y oportunos.
+							Análisis clínicos precisos y confiables con tecnología de
+							vanguardia. Nuestro laboratorio cuenta con equipos modernos y
+							personal altamente calificado para brindarte resultados exactos y
+							oportunos.
 						</p>
 					</section>
 
@@ -41,8 +52,12 @@ export default function ServiciosPage() {
 												<service.icon className="w-6 h-6 text-primary" />
 											</div>
 											<div>
-												<h3 className="text-xl font-semibold">{service.title}</h3>
-												<p className="text-sm text-foreground/60">{service.duration}</p>
+												<h3 className="text-xl font-semibold">
+													{service.title}
+												</h3>
+												<p className="text-sm text-foreground/60">
+													{service.duration}
+												</p>
 											</div>
 										</div>
 									</CardHeader>
@@ -51,7 +66,9 @@ export default function ServiciosPage() {
 											{service.description}
 										</p>
 										<div className="text-right">
-											<span className="text-lg font-bold text-primary">{service.price}</span>
+											<span className="text-lg font-bold text-primary">
+												{service.price}
+											</span>
 										</div>
 									</CardBody>
 								</Card>
@@ -73,8 +90,12 @@ export default function ServiciosPage() {
 												<category.icon className="w-5 h-5 text-primary" />
 											</div>
 											<div className="flex-1">
-												<h3 className="text-lg font-semibold mb-2">{category.title}</h3>
-												<p className="text-foreground/70 mb-3">{category.description}</p>
+												<h3 className="text-lg font-semibold mb-2">
+													{category.title}
+												</h3>
+												<p className="text-foreground/70 mb-3">
+													{category.description}
+												</p>
 												<ul className="text-sm text-foreground/60 space-y-1">
 													{category.tests.map((test, idx) => (
 														<li key={idx} className="flex items-center">
@@ -101,10 +122,14 @@ export default function ServiciosPage() {
 								<Card key={index} className="text-center">
 									<CardBody className="p-6">
 										<div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-											<span className="text-2xl font-bold text-white">{index + 1}</span>
+											<span className="text-2xl font-bold text-white">
+												{index + 1}
+											</span>
 										</div>
 										<h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-										<p className="text-foreground/70 text-sm">{step.description}</p>
+										<p className="text-foreground/70 text-sm">
+											{step.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -123,8 +148,12 @@ export default function ServiciosPage() {
 										<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<reason.icon className="w-8 h-8 text-primary" />
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{reason.title}</h3>
-										<p className="text-foreground/70 text-sm">{reason.description}</p>
+										<h3 className="text-lg font-semibold mb-2">
+											{reason.title}
+										</h3>
+										<p className="text-foreground/70 text-sm">
+											{reason.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -138,7 +167,10 @@ export default function ServiciosPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{packages.map((pkg, index) => (
-								<Card key={index} className={`text-center ${pkg.featured ? 'border-2 border-primary' : ''}`}>
+								<Card
+									key={index}
+									className={`text-center ${pkg.featured ? "border-2 border-primary" : ""}`}
+								>
 									<CardBody className="p-8">
 										{pkg.featured && (
 											<div className="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">
@@ -148,19 +180,26 @@ export default function ServiciosPage() {
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<pkg.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-2xl font-bold text-primary mb-2">{pkg.title}</h3>
+										<h3 className="text-2xl font-bold text-primary mb-2">
+											{pkg.title}
+										</h3>
 										<p className="text-foreground/70 mb-4">{pkg.description}</p>
-										<div className="text-3xl font-bold text-primary mb-4">{pkg.price}</div>
+										<div className="text-3xl font-bold text-primary mb-4">
+											{pkg.price}
+										</div>
 										<ul className="text-sm text-foreground/60 mb-6 space-y-2">
 											{pkg.includes.map((item, idx) => (
-												<li key={idx} className="flex items-center justify-center">
+												<li
+													key={idx}
+													className="flex items-center justify-center"
+												>
 													<BiCheck className="w-4 h-4 text-green-500 mr-2" />
 													{item}
 												</li>
 											))}
 										</ul>
-										<Button 
-											color="primary" 
+										<Button
+											color="primary"
 											variant={pkg.featured ? "solid" : "bordered"}
 											fullWidth
 											startContent={<MdSchedule className="w-4 h-4" />}
@@ -181,20 +220,21 @@ export default function ServiciosPage() {
 									¿Necesitas realizarte exámenes?
 								</h2>
 								<p className="text-foreground/70 mb-6">
-									Agenda tu cita en nuestro laboratorio y recibe resultados confiables con 
-									la mejor atención profesional. Estamos aquí para cuidar de tu salud.
+									Agenda tu cita en nuestro laboratorio y recibe resultados
+									confiables con la mejor atención profesional. Estamos aquí
+									para cuidar de tu salud.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
-									<Button 
-										color="primary" 
+									<Button
+										color="primary"
 										size="lg"
 										startContent={<MdSchedule className="w-5 h-5" />}
 									>
 										Agendar Cita
 									</Button>
-									<Button 
-										variant="bordered" 
-										color="primary" 
+									<Button
+										variant="bordered"
+										color="primary"
 										size="lg"
 										startContent={<FaClipboardList className="w-5 h-5" />}
 									>
@@ -213,21 +253,24 @@ export default function ServiciosPage() {
 const laboratoryServices = [
 	{
 		title: "Hematología Completa",
-		description: "Análisis completo de sangre incluyendo hemograma, plaquetas y glóbulos blancos.",
+		description:
+			"Análisis completo de sangre incluyendo hemograma, plaquetas y glóbulos blancos.",
 		duration: "Resultados en 4-6 horas",
 		price: "$25",
 		icon: MdBloodtype,
 	},
 	{
 		title: "Química Sanguínea",
-		description: "Perfil bioquímico completo: glucosa, colesterol, triglicéridos, proteínas.",
+		description:
+			"Perfil bioquímico completo: glucosa, colesterol, triglicéridos, proteínas.",
 		duration: "Resultados en 6-8 horas",
 		price: "$35",
 		icon: FaFlask,
 	},
 	{
 		title: "Examen General de Orina",
-		description: "Análisis físico, químico y microscópico de orina para detección de anomalías.",
+		description:
+			"Análisis físico, químico y microscópico de orina para detección de anomalías.",
 		duration: "Resultados en 2-4 horas",
 		price: "$15",
 		icon: GiMicroscope,
@@ -241,14 +284,16 @@ const laboratoryServices = [
 	},
 	{
 		title: "Función Hepática",
-		description: "Evaluación del funcionamiento del hígado mediante enzimas específicas.",
+		description:
+			"Evaluación del funcionamiento del hígado mediante enzimas específicas.",
 		duration: "Resultados en 6-8 horas",
 		price: "$30",
 		icon: MdLocalHospital,
 	},
 	{
 		title: "Función Renal",
-		description: "Análisis de creatinina, urea y otros marcadores de función renal.",
+		description:
+			"Análisis de creatinina, urea y otros marcadores de función renal.",
 		duration: "Resultados en 4-6 horas",
 		price: "$25",
 		icon: FaUserMd,
@@ -258,50 +303,54 @@ const laboratoryServices = [
 const testCategories = [
 	{
 		title: "Análisis de Sangre",
-		description: "Exámenes sanguíneos completos para evaluación de salud general.",
+		description:
+			"Exámenes sanguíneos completos para evaluación de salud general.",
 		icon: MdBloodtype,
 		tests: [
 			"Hemograma completo",
 			"Química sanguínea básica",
 			"Perfil lipídico",
 			"Glucosa en ayunas",
-			"Hemoglobina glicosilada"
+			"Hemoglobina glicosilada",
 		],
 	},
 	{
 		title: "Análisis de Orina",
-		description: "Estudios urinarios para detectar infecciones y problemas renales.",
+		description:
+			"Estudios urinarios para detectar infecciones y problemas renales.",
 		icon: GiMicroscope,
 		tests: [
 			"Examen general de orina",
 			"Urocultivo",
 			"Microalbuminuria",
 			"Proteínas en orina 24h",
-			"Citología urinaria"
+			"Citología urinaria",
 		],
 	},
 	{
 		title: "Hormonas",
-		description: "Análisis hormonales para evaluación endocrina y reproductiva.",
+		description:
+			"Análisis hormonales para evaluación endocrina y reproductiva.",
 		icon: FaFlask,
 		tests: [
 			"Perfil tiroideo (TSH, T3, T4)",
 			"Hormonas sexuales",
 			"Cortisol",
 			"Insulina",
-			"Hormona del crecimiento"
+			"Hormona del crecimiento",
 		],
 	},
 	{
 		title: "Microbiología",
-		description: "Cultivos y estudios microbiológicos para detección de infecciones.",
+		description:
+			"Cultivos y estudios microbiológicos para detección de infecciones.",
 		icon: MdSecurity,
 		tests: [
 			"Cultivo de garganta",
 			"Coprocultivo",
 			"Cultivo de heridas",
 			"Antibiograma",
-			"Pruebas de sensibilidad"
+			"Pruebas de sensibilidad",
 		],
 	},
 ];
@@ -321,14 +370,16 @@ const processSteps = [
 	},
 	{
 		title: "Resultados",
-		description: "Entrega de resultados digitales y físicos con interpretación.",
+		description:
+			"Entrega de resultados digitales y físicos con interpretación.",
 	},
 ];
 
 const whyChooseUs = [
 	{
 		title: "Precisión",
-		description: "Resultados exactos con equipos calibrados y personal especializado.",
+		description:
+			"Resultados exactos con equipos calibrados y personal especializado.",
 		icon: BiShield,
 	},
 	{
@@ -338,7 +389,8 @@ const whyChooseUs = [
 	},
 	{
 		title: "Tecnología",
-		description: "Equipos modernos y sistemas automatizados de última generación.",
+		description:
+			"Equipos modernos y sistemas automatizados de última generación.",
 		icon: ImLab,
 	},
 	{
@@ -360,7 +412,7 @@ const packages = [
 			"Química sanguínea básica",
 			"Examen general de orina",
 			"Consulta con resultados",
-			"Informe médico"
+			"Informe médico",
 		],
 	},
 	{
@@ -376,7 +428,7 @@ const packages = [
 			"Función hepática y renal",
 			"Examen general de orina",
 			"Perfil tiroideo básico",
-			"Consulta médica incluida"
+			"Consulta médica incluida",
 		],
 	},
 	{
@@ -392,7 +444,7 @@ const packages = [
 			"Radiografía de tórax",
 			"Consulta con especialista",
 			"Informe ejecutivo detallado",
-			"Seguimiento personalizado"
+			"Seguimiento personalizado",
 		],
 	},
 ];

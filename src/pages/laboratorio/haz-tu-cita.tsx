@@ -1,10 +1,24 @@
-import { title, subtitle } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
-import { Card, CardBody, CardHeader, Button, Input, Select, SelectItem, Textarea } from "@heroui/react";
-import { MdSchedule } from "react-icons/md";
-import { BiTime, BiPhone, BiCalendar, BiUser } from "react-icons/bi";
-import { FaMapMarkerAlt, FaWhatsapp, FaEnvelope, FaClipboardList } from "react-icons/fa";
+import {
+	Button,
+	Card,
+	CardBody,
+	CardHeader,
+	Input,
+	Select,
+	SelectItem,
+	Textarea,
+} from "@heroui/react";
+import { BiCalendar, BiPhone, BiTime, BiUser } from "react-icons/bi";
+import {
+	FaClipboardList,
+	FaEnvelope,
+	FaMapMarkerAlt,
+	FaWhatsapp,
+} from "react-icons/fa";
 import { ImLab } from "react-icons/im";
+import { MdSchedule } from "react-icons/md";
+import { subtitle, title } from "@/components/primitives";
+import DefaultLayout from "@/layouts/default";
 
 export default function HazTuCitaPage() {
 	return (
@@ -15,13 +29,12 @@ export default function HazTuCitaPage() {
 					<section className="text-center mb-16">
 						<div className="flex items-center justify-center mb-6">
 							<MdSchedule className="w-16 h-16 text-primary mr-4" />
-							<h1 className={title({ size: "lg" })}>
-								Haz tu Cita
-							</h1>
+							<h1 className={title({ size: "lg" })}>Haz tu Cita</h1>
 						</div>
 						<p className={subtitle({ class: "text-center mx-auto max-w-2xl" })}>
-							Agenda tu cita de laboratorio de forma rápida y sencilla. Elige el horario que mejor 
-							se adapte a ti y recibe atención personalizada con resultados confiables.
+							Agenda tu cita de laboratorio de forma rápida y sencilla. Elige el
+							horario que mejor se adapte a ti y recibe atención personalizada
+							con resultados confiables.
 						</p>
 					</section>
 
@@ -33,7 +46,9 @@ export default function HazTuCitaPage() {
 								<CardHeader>
 									<div className="flex items-center">
 										<BiCalendar className="w-6 h-6 text-primary mr-3" />
-										<h2 className="text-2xl font-bold text-primary">Formulario de Cita</h2>
+										<h2 className="text-2xl font-bold text-primary">
+											Formulario de Cita
+										</h2>
 									</div>
 								</CardHeader>
 								<CardBody className="space-y-6">
@@ -73,9 +88,7 @@ export default function HazTuCitaPage() {
 											variant="bordered"
 										>
 											{examTypes.map((exam) => (
-												<SelectItem key={exam.value} value={exam.value}>
-													{exam.label}
-												</SelectItem>
+												<SelectItem key={exam.value}>{exam.label}</SelectItem>
 											))}
 										</Select>
 										<Select
@@ -85,9 +98,7 @@ export default function HazTuCitaPage() {
 											variant="bordered"
 										>
 											{timeSlots.map((slot) => (
-												<SelectItem key={slot.value} value={slot.value}>
-													{slot.label}
-												</SelectItem>
+												<SelectItem key={slot.value}>{slot.label}</SelectItem>
 											))}
 										</Select>
 									</div>
@@ -103,9 +114,9 @@ export default function HazTuCitaPage() {
 										variant="bordered"
 										rows={3}
 									/>
-									<Button 
-										color="primary" 
-										size="lg" 
+									<Button
+										color="primary"
+										size="lg"
 										fullWidth
 										startContent={<MdSchedule className="w-5 h-5" />}
 									>
@@ -118,7 +129,9 @@ export default function HazTuCitaPage() {
 							<div className="space-y-6">
 								<Card>
 									<CardHeader>
-										<h3 className="text-xl font-bold text-primary">Información de Contacto</h3>
+										<h3 className="text-xl font-bold text-primary">
+											Información de Contacto
+										</h3>
 									</CardHeader>
 									<CardBody className="space-y-4">
 										{contactInfo.map((contact, index) => (
@@ -137,14 +150,21 @@ export default function HazTuCitaPage() {
 
 								<Card>
 									<CardHeader>
-										<h3 className="text-xl font-bold text-primary">Horarios de Atención</h3>
+										<h3 className="text-xl font-bold text-primary">
+											Horarios de Atención
+										</h3>
 									</CardHeader>
 									<CardBody>
 										<div className="space-y-3">
 											{scheduleInfo.map((schedule, index) => (
-												<div key={index} className="flex justify-between items-center">
+												<div
+													key={index}
+													className="flex justify-between items-center"
+												>
 													<span className="font-medium">{schedule.day}</span>
-													<span className="text-foreground/70">{schedule.hours}</span>
+													<span className="text-foreground/70">
+														{schedule.hours}
+													</span>
 												</div>
 											))}
 										</div>
@@ -164,10 +184,14 @@ export default function HazTuCitaPage() {
 								<Card key={index} className="text-center">
 									<CardBody className="p-6">
 										<div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-											<span className="text-2xl font-bold text-white">{index + 1}</span>
+											<span className="text-2xl font-bold text-white">
+												{index + 1}
+											</span>
 										</div>
 										<h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-										<p className="text-foreground/70 text-sm">{step.description}</p>
+										<p className="text-foreground/70 text-sm">
+											{step.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -188,8 +212,12 @@ export default function HazTuCitaPage() {
 												<info.icon className="w-5 h-5 text-primary" />
 											</div>
 											<div>
-												<h3 className="text-lg font-semibold mb-2">{info.title}</h3>
-												<p className="text-foreground/70 mb-3">{info.description}</p>
+												<h3 className="text-lg font-semibold mb-2">
+													{info.title}
+												</h3>
+												<p className="text-foreground/70 mb-3">
+													{info.description}
+												</p>
 												<ul className="text-sm text-foreground/60 space-y-1">
 													{info.details.map((detail, idx) => (
 														<li key={idx} className="flex items-center">
@@ -213,15 +241,22 @@ export default function HazTuCitaPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{alternativeContact.map((method, index) => (
-								<Card key={index} className="text-center hover:shadow-lg transition-shadow">
+								<Card
+									key={index}
+									className="text-center hover:shadow-lg transition-shadow"
+								>
 									<CardBody className="p-8">
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<method.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-xl font-bold text-primary mb-2">{method.title}</h3>
-										<p className="text-foreground/70 mb-4">{method.description}</p>
-										<Button 
-											color="primary" 
+										<h3 className="text-xl font-bold text-primary mb-2">
+											{method.title}
+										</h3>
+										<p className="text-foreground/70 mb-4">
+											{method.description}
+										</p>
+										<Button
+											color="primary"
 											variant="bordered"
 											fullWidth
 											startContent={<method.icon className="w-4 h-4" />}
@@ -242,20 +277,21 @@ export default function HazTuCitaPage() {
 									¿Necesitas ayuda?
 								</h2>
 								<p className="text-foreground/70 mb-6">
-									Si tienes dudas sobre cómo agendar tu cita o necesitas información adicional 
-									sobre nuestros servicios, no dudes en contactarnos. Estamos aquí para ayudarte.
+									Si tienes dudas sobre cómo agendar tu cita o necesitas
+									información adicional sobre nuestros servicios, no dudes en
+									contactarnos. Estamos aquí para ayudarte.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
-									<Button 
-										color="primary" 
+									<Button
+										color="primary"
 										size="lg"
 										startContent={<FaWhatsapp className="w-5 h-5" />}
 									>
 										WhatsApp
 									</Button>
-									<Button 
-										variant="bordered" 
-										color="primary" 
+									<Button
+										variant="bordered"
+										color="primary"
 										size="lg"
 										startContent={<BiPhone className="w-5 h-5" />}
 									>
@@ -329,11 +365,13 @@ const scheduleInfo = [
 const schedulingSteps = [
 	{
 		title: "Completa el Formulario",
-		description: "Llena todos los campos requeridos con tu información personal.",
+		description:
+			"Llena todos los campos requeridos con tu información personal.",
 	},
 	{
 		title: "Selecciona Fecha y Hora",
-		description: "Elige la fecha y horario que mejor se adapte a tu disponibilidad.",
+		description:
+			"Elige la fecha y horario que mejor se adapte a tu disponibilidad.",
 	},
 	{
 		title: "Confirmación",
@@ -355,7 +393,7 @@ const importantInfo = [
 			"No consumir alcohol 24 horas antes",
 			"Traer identificación oficial",
 			"Usar ropa cómoda y holgada",
-			"Informar medicamentos actuales"
+			"Informar medicamentos actuales",
 		],
 	},
 	{
@@ -367,7 +405,7 @@ const importantInfo = [
 			"Reagendar sin costo adicional",
 			"Llegada tardía: tolerancia de 15 minutos",
 			"No presentarse: posible cargo",
-			"Confirmación requerida 24h antes"
+			"Confirmación requerida 24h antes",
 		],
 	},
 	{
@@ -379,7 +417,7 @@ const importantInfo = [
 			"Copia física disponible",
 			"Tiempo: 24-48 horas hábiles",
 			"Consulta médica opcional",
-			"Almacenamiento seguro por 5 años"
+			"Almacenamiento seguro por 5 años",
 		],
 	},
 	{
@@ -391,7 +429,7 @@ const importantInfo = [
 			"Tarjetas de crédito/débito",
 			"Transferencias bancarias",
 			"Seguros médicos",
-			"Planes de pago disponibles"
+			"Planes de pago disponibles",
 		],
 	},
 ];
@@ -399,19 +437,22 @@ const importantInfo = [
 const alternativeContact = [
 	{
 		title: "WhatsApp",
-		description: "Agenda tu cita rápidamente a través de nuestro WhatsApp Business.",
+		description:
+			"Agenda tu cita rápidamente a través de nuestro WhatsApp Business.",
 		icon: FaWhatsapp,
 		action: "Chatear Ahora",
 	},
 	{
 		title: "Llamada Telefónica",
-		description: "Habla directamente con nuestro personal para agendar tu cita.",
+		description:
+			"Habla directamente con nuestro personal para agendar tu cita.",
 		icon: BiPhone,
 		action: "Llamar Ahora",
 	},
 	{
 		title: "Visita Presencial",
-		description: "Visita nuestras instalaciones para agendar tu cita en persona.",
+		description:
+			"Visita nuestras instalaciones para agendar tu cita en persona.",
 		icon: FaMapMarkerAlt,
 		action: "Ver Ubicación",
 	},

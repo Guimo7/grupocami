@@ -1,10 +1,14 @@
-import { title, subtitle } from "@/components/primitives";
+import { Button, Card, CardBody, CardHeader } from "@heroui/react";
+import { BiCalendar, BiCheck, BiGift, BiStar } from "react-icons/bi";
+import { FaCrown, FaHandsHelping, FaHeart, FaLeaf } from "react-icons/fa";
+import {
+	MdCardMembership,
+	MdDiamond,
+	MdSpa,
+	MdWorkspacePremium,
+} from "react-icons/md";
+import { subtitle, title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
-import { Card, CardBody, CardHeader, Button } from "@heroui/react";
-import { PiTowel } from "react-icons/pi";
-import { BiCheck, BiStar, BiCalendar, BiGift } from "react-icons/bi";
-import { FaHandsHelping, FaLeaf, FaHeart, FaCrown } from "react-icons/fa";
-import { MdSpa, MdDiamond, MdWorkspacePremium, MdCardMembership } from "react-icons/md";
 
 export default function PlanesPage() {
 	return (
@@ -15,14 +19,13 @@ export default function PlanesPage() {
 					<section className="text-center mb-16">
 						<div className="flex items-center justify-center mb-6">
 							<MdCardMembership className="w-16 h-16 text-primary mr-4" />
-							<h1 className={title({ size: "lg" })}>
-								Planes de Spa
-							</h1>
+							<h1 className={title({ size: "lg" })}>Planes de Spa</h1>
 						</div>
 						<p className={subtitle({ class: "text-center mx-auto max-w-2xl" })}>
-							Descubre nuestros planes de membresía diseñados para brindarte bienestar continuo 
-							a precios preferenciales. Elige el plan que mejor se adapte a tu estilo de vida 
-							y disfruta de beneficios exclusivos.
+							Descubre nuestros planes de membresía diseñados para brindarte
+							bienestar continuo a precios preferenciales. Elige el plan que
+							mejor se adapte a tu estilo de vida y disfruta de beneficios
+							exclusivos.
 						</p>
 					</section>
 
@@ -33,7 +36,10 @@ export default function PlanesPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{membershipPlans.map((plan, index) => (
-								<Card key={index} className={`text-center ${plan.featured ? 'border-2 border-primary' : ''}`}>
+								<Card
+									key={index}
+									className={`text-center ${plan.featured ? "border-2 border-primary" : ""}`}
+								>
 									<CardBody className="p-8">
 										{plan.featured && (
 											<div className="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">
@@ -43,20 +49,31 @@ export default function PlanesPage() {
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<plan.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-2xl font-bold text-primary mb-2">{plan.title}</h3>
-										<p className="text-foreground/70 mb-4">{plan.description}</p>
-										<div className="text-3xl font-bold text-primary mb-1">{plan.price}</div>
-										<p className="text-sm text-foreground/60 mb-6">{plan.billing}</p>
+										<h3 className="text-2xl font-bold text-primary mb-2">
+											{plan.title}
+										</h3>
+										<p className="text-foreground/70 mb-4">
+											{plan.description}
+										</p>
+										<div className="text-3xl font-bold text-primary mb-1">
+											{plan.price}
+										</div>
+										<p className="text-sm text-foreground/60 mb-6">
+											{plan.billing}
+										</p>
 										<ul className="text-sm text-foreground/60 mb-6 space-y-2">
 											{plan.features.map((feature, idx) => (
-												<li key={idx} className="flex items-center justify-center">
+												<li
+													key={idx}
+													className="flex items-center justify-center"
+												>
 													<BiCheck className="w-4 h-4 text-green-500 mr-2" />
 													{feature}
 												</li>
 											))}
 										</ul>
-										<Button 
-											color="primary" 
+										<Button
+											color="primary"
 											variant={plan.featured ? "solid" : "bordered"}
 											fullWidth
 											startContent={<MdSpa className="w-4 h-4" />}
@@ -84,16 +101,26 @@ export default function PlanesPage() {
 											</div>
 											<div className="flex-1">
 												<div className="flex justify-between items-start mb-2">
-													<h3 className="text-lg font-semibold">{package_.title}</h3>
+													<h3 className="text-lg font-semibold">
+														{package_.title}
+													</h3>
 													<div className="text-right">
-														<div className="text-2xl font-bold text-primary">{package_.price}</div>
-														<div className="text-sm text-foreground/60 line-through">{package_.originalPrice}</div>
+														<div className="text-2xl font-bold text-primary">
+															{package_.price}
+														</div>
+														<div className="text-sm text-foreground/60 line-through">
+															{package_.originalPrice}
+														</div>
 													</div>
 												</div>
-												<p className="text-foreground/70 mb-3">{package_.description}</p>
+												<p className="text-foreground/70 mb-3">
+													{package_.description}
+												</p>
 												<div className="flex items-center mb-3">
 													<BiCalendar className="w-4 h-4 text-primary mr-2" />
-													<span className="text-sm text-foreground/60">{package_.validity}</span>
+													<span className="text-sm text-foreground/60">
+														{package_.validity}
+													</span>
 												</div>
 												<ul className="text-sm text-foreground/60 space-y-1">
 													{package_.includes.map((item, idx) => (
@@ -126,8 +153,12 @@ export default function PlanesPage() {
 													<seasonal.icon className="w-6 h-6 text-primary" />
 												</div>
 												<div>
-													<h3 className="text-xl font-semibold">{seasonal.title}</h3>
-													<p className="text-sm text-foreground/60">{seasonal.season}</p>
+													<h3 className="text-xl font-semibold">
+														{seasonal.title}
+													</h3>
+													<p className="text-sm text-foreground/60">
+														{seasonal.season}
+													</p>
 												</div>
 											</div>
 											{seasonal.limited && (
@@ -142,12 +173,16 @@ export default function PlanesPage() {
 											{seasonal.description}
 										</p>
 										<div className="flex justify-between items-center mb-4">
-											<span className="text-2xl font-bold text-primary">{seasonal.price}</span>
-											<span className="text-sm text-foreground/60">{seasonal.duration}</span>
+											<span className="text-2xl font-bold text-primary">
+												{seasonal.price}
+											</span>
+											<span className="text-sm text-foreground/60">
+												{seasonal.duration}
+											</span>
 										</div>
-										<Button 
-											color="primary" 
-											variant="flat" 
+										<Button
+											color="primary"
+											variant="flat"
 											fullWidth
 											startContent={<BiGift className="w-4 h-4" />}
 										>
@@ -171,8 +206,12 @@ export default function PlanesPage() {
 										<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<benefit.icon className="w-8 h-8 text-primary" />
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-										<p className="text-foreground/70 text-sm">{benefit.description}</p>
+										<h3 className="text-lg font-semibold mb-2">
+											{benefit.title}
+										</h3>
+										<p className="text-foreground/70 text-sm">
+											{benefit.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -186,7 +225,10 @@ export default function PlanesPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 							{corporatePlans.map((plan, index) => (
-								<Card key={index} className={`text-center ${plan.featured ? 'border-2 border-primary' : ''}`}>
+								<Card
+									key={index}
+									className={`text-center ${plan.featured ? "border-2 border-primary" : ""}`}
+								>
 									<CardBody className="p-8">
 										{plan.featured && (
 											<div className="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">
@@ -196,19 +238,28 @@ export default function PlanesPage() {
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<plan.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-2xl font-bold text-primary mb-2">{plan.title}</h3>
-										<p className="text-foreground/70 mb-4">{plan.description}</p>
-										<div className="text-3xl font-bold text-primary mb-4">{plan.price}</div>
+										<h3 className="text-2xl font-bold text-primary mb-2">
+											{plan.title}
+										</h3>
+										<p className="text-foreground/70 mb-4">
+											{plan.description}
+										</p>
+										<div className="text-3xl font-bold text-primary mb-4">
+											{plan.price}
+										</div>
 										<ul className="text-sm text-foreground/60 mb-6 space-y-2">
 											{plan.features.map((feature, idx) => (
-												<li key={idx} className="flex items-center justify-center">
+												<li
+													key={idx}
+													className="flex items-center justify-center"
+												>
 													<BiCheck className="w-4 h-4 text-green-500 mr-2" />
 													{feature}
 												</li>
 											))}
 										</ul>
-										<Button 
-											color="primary" 
+										<Button
+											color="primary"
 											variant={plan.featured ? "solid" : "bordered"}
 											fullWidth
 											startContent={<MdWorkspacePremium className="w-4 h-4" />}
@@ -229,20 +280,21 @@ export default function PlanesPage() {
 									¿Listo para comenzar tu bienestar?
 								</h2>
 								<p className="text-foreground/70 mb-6">
-									Elige el plan que mejor se adapte a tu estilo de vida y comienza a disfrutar 
-									de todos los beneficios de nuestro spa con precios preferenciales.
+									Elige el plan que mejor se adapte a tu estilo de vida y
+									comienza a disfrutar de todos los beneficios de nuestro spa
+									con precios preferenciales.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
-									<Button 
-										color="primary" 
+									<Button
+										color="primary"
 										size="lg"
 										startContent={<MdCardMembership className="w-5 h-5" />}
 									>
 										Elegir Plan
 									</Button>
-									<Button 
-										variant="bordered" 
-										color="primary" 
+									<Button
+										variant="bordered"
+										color="primary"
 										size="lg"
 										startContent={<BiStar className="w-5 h-5" />}
 									>
@@ -271,7 +323,7 @@ const membershipPlans = [
 			"1 facial básico",
 			"Acceso a sauna",
 			"10% descuento en servicios adicionales",
-			"Horario flexible"
+			"Horario flexible",
 		],
 	},
 	{
@@ -288,7 +340,7 @@ const membershipPlans = [
 			"15% descuento en servicios adicionales",
 			"Prioridad en reservas",
 			"Consulta con especialista",
-			"Productos de cortesía"
+			"Productos de cortesía",
 		],
 	},
 	{
@@ -305,7 +357,7 @@ const membershipPlans = [
 			"20% descuento en servicios adicionales",
 			"Servicio personalizado",
 			"Productos premium incluidos",
-			"Invitado mensual gratis"
+			"Invitado mensual gratis",
 		],
 	},
 ];
@@ -313,7 +365,8 @@ const membershipPlans = [
 const servicePackages = [
 	{
 		title: "Paquete Relajación Total",
-		description: "Combinación perfecta de masajes y tratamientos faciales para relajación completa.",
+		description:
+			"Combinación perfecta de masajes y tratamientos faciales para relajación completa.",
 		price: "$180",
 		originalPrice: "$220",
 		validity: "Válido por 3 meses",
@@ -322,12 +375,13 @@ const servicePackages = [
 			"2 masajes relajantes (60 min c/u)",
 			"1 facial rejuvenecedor",
 			"1 sesión de aromaterapia",
-			"Acceso a sauna por 3 meses"
+			"Acceso a sauna por 3 meses",
 		],
 	},
 	{
 		title: "Paquete Belleza Integral",
-		description: "Tratamientos especializados para el cuidado completo de tu belleza natural.",
+		description:
+			"Tratamientos especializados para el cuidado completo de tu belleza natural.",
 		price: "$250",
 		originalPrice: "$300",
 		validity: "Válido por 4 meses",
@@ -336,12 +390,13 @@ const servicePackages = [
 			"3 faciales especializados",
 			"2 exfoliaciones corporales",
 			"1 masaje de piedras calientes",
-			"Productos de cuidado personal incluidos"
+			"Productos de cuidado personal incluidos",
 		],
 	},
 	{
 		title: "Paquete Desintoxicación",
-		description: "Programa completo para eliminar toxinas y revitalizar tu organismo.",
+		description:
+			"Programa completo para eliminar toxinas y revitalizar tu organismo.",
 		price: "$320",
 		originalPrice: "$400",
 		validity: "Válido por 2 meses",
@@ -350,12 +405,13 @@ const servicePackages = [
 			"4 sesiones de hidroterapia",
 			"2 masajes drenantes",
 			"2 envolturas desintoxicantes",
-			"Plan nutricional personalizado"
+			"Plan nutricional personalizado",
 		],
 	},
 	{
 		title: "Paquete Parejas",
-		description: "Experiencia romántica diseñada para compartir momentos especiales.",
+		description:
+			"Experiencia romántica diseñada para compartir momentos especiales.",
 		price: "$300",
 		originalPrice: "$380",
 		validity: "Válido por 6 meses",
@@ -364,7 +420,7 @@ const servicePackages = [
 			"2 masajes relajantes para parejas",
 			"1 facial conjunto",
 			"Champagne y chocolates",
-			"Ambiente romántico personalizado"
+			"Ambiente romántico personalizado",
 		],
 	},
 ];
@@ -429,7 +485,8 @@ const seasonalPackages = [
 const membershipBenefits = [
 	{
 		title: "Descuentos Exclusivos",
-		description: "Precios preferenciales en todos nuestros servicios y productos.",
+		description:
+			"Precios preferenciales en todos nuestros servicios y productos.",
 		icon: BiStar,
 	},
 	{
@@ -444,7 +501,8 @@ const membershipBenefits = [
 	},
 	{
 		title: "Asesoría Personalizada",
-		description: "Consulta con especialistas para diseñar tu rutina de bienestar.",
+		description:
+			"Consulta con especialistas para diseñar tu rutina de bienestar.",
 		icon: MdSpa,
 	},
 ];
@@ -461,12 +519,13 @@ const corporatePlans = [
 			"Servicios en horario laboral",
 			"Paquetes personalizados",
 			"Descuentos por volumen",
-			"Reportes de bienestar"
+			"Reportes de bienestar",
 		],
 	},
 	{
 		title: "Plan Corporativo",
-		description: "Solución integral para grandes corporaciones y beneficios empleados.",
+		description:
+			"Solución integral para grandes corporaciones y beneficios empleados.",
 		price: "Desde $3,000",
 		icon: MdDiamond,
 		featured: true,
@@ -477,7 +536,7 @@ const corporatePlans = [
 			"Descuentos corporativos",
 			"Gestor de cuenta dedicado",
 			"Eventos corporativos",
-			"Métricas de satisfacción"
+			"Métricas de satisfacción",
 		],
 	},
 ];

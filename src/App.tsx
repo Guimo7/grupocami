@@ -3,17 +3,17 @@ import AlquilerPage from "@/pages/clinica/alquiler";
 import AsesoriaPage from "@/pages/clinica/asesoria";
 import CapacitacionesPage from "@/pages/clinica/capacitaciones";
 import ConsultaMedicaPage from "@/pages/clinica/consulta-medica";
+import ConocenosPage from "@/pages/conocenos";
+import ContactanosPage from "@/pages/contactanos";
 import EmpresasPage from "@/pages/farmacurate/empresas";
 import KitsPage from "@/pages/farmacurate/kits";
-import IndexPage from "@/pages/index";
-import ServiciosLaboratorioPage from "@/pages/laboratorio/servicios";
-import HazTuCitaPage from "@/pages/laboratorio/haz-tu-cita";
-import ServiciosSpaPage from "@/pages/spa/servicios";
-import PlanesSpaPage from "@/pages/spa/planes";
 import EquipoPage from "@/pages/importadora/equipo";
 import FinanciamientoPage from "@/pages/importadora/financiamiento";
-import ContactanosPage from "@/pages/contactanos";
-import ConocenosPage from "@/pages/conocenos";
+import IndexPage from "@/pages/index";
+import HazTuCitaPage from "@/pages/laboratorio/haz-tu-cita";
+import ServiciosLaboratorioPage from "@/pages/laboratorio/servicios";
+import PlanesSpaPage from "@/pages/spa/planes";
+import ServiciosSpaPage from "@/pages/spa/servicios";
 
 function App() {
 	return (

@@ -1,8 +1,8 @@
-import { Card, CardBody, Button, Link } from "@heroui/react";
-import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { Button, Card, CardBody, Link } from "@heroui/react";
 import { FaWhatsapp } from "react-icons/fa";
-import DefaultLayout from "@/layouts/default";
 import { siteConfig } from "@/config/site";
+import DefaultLayout from "@/layouts/default";
 
 export default function ContactanosPage() {
 	const handleWhatsAppClick = () => {

@@ -1,10 +1,33 @@
-import { title, subtitle } from "@/components/primitives";
+import {
+	Button,
+	Card,
+	CardBody,
+	CardHeader,
+	Input,
+	Select,
+	SelectItem,
+	Textarea,
+} from "@heroui/react";
+import {
+	BiCalculator,
+	BiCheck,
+	BiMoney,
+	BiShield,
+	BiTime,
+} from "react-icons/bi";
+import {
+	FaBuilding,
+	FaClipboardList,
+	FaHandshake,
+	FaPercent,
+} from "react-icons/fa";
+import {
+	MdAccountBalance,
+	MdAttachMoney,
+	MdBusinessCenter,
+} from "react-icons/md";
+import { subtitle, title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
-import { Card, CardBody, CardHeader, Button, Input, Select, SelectItem, Textarea } from "@heroui/react";
-import { BiMoney, BiCalculator, BiCheck, BiTime, BiShield } from "react-icons/bi";
-import { FaHandshake, FaPercent, FaClipboardList, FaBuilding } from "react-icons/fa";
-import { MdAttachMoney, MdAccountBalance, MdCreditCard, MdBusinessCenter } from "react-icons/md";
-import { PiTruckTrailer } from "react-icons/pi";
 
 export default function FinanciamientoPage() {
 	return (
@@ -15,14 +38,13 @@ export default function FinanciamientoPage() {
 					<section className="text-center mb-16">
 						<div className="flex items-center justify-center mb-6">
 							<MdAttachMoney className="w-16 h-16 text-primary mr-4" />
-							<h1 className={title({ size: "lg" })}>
-								Financiamiento
-							</h1>
+							<h1 className={title({ size: "lg" })}>Financiamiento</h1>
 						</div>
 						<p className={subtitle({ class: "text-center mx-auto max-w-2xl" })}>
-							Facilitamos la adquisición de equipos médicos con planes de financiamiento flexibles 
-							y tasas competitivas. Soluciones personalizadas para hospitales, clínicas y 
-							profesionales de la salud.
+							Facilitamos la adquisición de equipos médicos con planes de
+							financiamiento flexibles y tasas competitivas. Soluciones
+							personalizadas para hospitales, clínicas y profesionales de la
+							salud.
 						</p>
 					</section>
 
@@ -33,7 +55,10 @@ export default function FinanciamientoPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{financingOptions.map((option, index) => (
-								<Card key={index} className={`text-center ${option.featured ? 'border-2 border-primary' : ''}`}>
+								<Card
+									key={index}
+									className={`text-center ${option.featured ? "border-2 border-primary" : ""}`}
+								>
 									<CardBody className="p-8">
 										{option.featured && (
 											<div className="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">
@@ -43,20 +68,31 @@ export default function FinanciamientoPage() {
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<option.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-2xl font-bold text-primary mb-2">{option.title}</h3>
-										<p className="text-foreground/70 mb-4">{option.description}</p>
-										<div className="text-3xl font-bold text-primary mb-1">{option.rate}</div>
-										<p className="text-sm text-foreground/60 mb-6">{option.term}</p>
+										<h3 className="text-2xl font-bold text-primary mb-2">
+											{option.title}
+										</h3>
+										<p className="text-foreground/70 mb-4">
+											{option.description}
+										</p>
+										<div className="text-3xl font-bold text-primary mb-1">
+											{option.rate}
+										</div>
+										<p className="text-sm text-foreground/60 mb-6">
+											{option.term}
+										</p>
 										<ul className="text-sm text-foreground/60 mb-6 space-y-2">
 											{option.features.map((feature, idx) => (
-												<li key={idx} className="flex items-center justify-center">
+												<li
+													key={idx}
+													className="flex items-center justify-center"
+												>
 													<BiCheck className="w-4 h-4 text-green-500 mr-2" />
 													{feature}
 												</li>
 											))}
 										</ul>
-										<Button 
-											color="primary" 
+										<Button
+											color="primary"
 											variant={option.featured ? "solid" : "bordered"}
 											fullWidth
 											startContent={<BiCalculator className="w-4 h-4" />}
@@ -77,7 +113,9 @@ export default function FinanciamientoPage() {
 								<CardHeader>
 									<div className="flex items-center">
 										<BiCalculator className="w-6 h-6 text-primary mr-3" />
-										<h2 className="text-2xl font-bold text-primary">Calculadora de Financiamiento</h2>
+										<h2 className="text-2xl font-bold text-primary">
+											Calculadora de Financiamiento
+										</h2>
 									</div>
 								</CardHeader>
 								<CardBody className="space-y-6">
@@ -95,9 +133,7 @@ export default function FinanciamientoPage() {
 										variant="bordered"
 									>
 										{financingTerms.map((term) => (
-											<SelectItem key={term.value} value={term.value}>
-												{term.label}
-											</SelectItem>
+											<SelectItem key={term.value}>{term.label}</SelectItem>
 										))}
 									</Select>
 									<Select
@@ -107,21 +143,25 @@ export default function FinanciamientoPage() {
 										variant="bordered"
 									>
 										{interestRates.map((rate) => (
-											<SelectItem key={rate.value} value={rate.value}>
-												{rate.label}
-											</SelectItem>
+											<SelectItem key={rate.value}>{rate.label}</SelectItem>
 										))}
 									</Select>
 									<Card className="bg-primary/5 border-primary/20">
 										<CardBody className="p-4">
 											<div className="space-y-2">
 												<div className="flex justify-between">
-													<span className="text-foreground/70">Cuota Mensual:</span>
+													<span className="text-foreground/70">
+														Cuota Mensual:
+													</span>
 													<span className="font-bold text-primary">$2,485</span>
 												</div>
 												<div className="flex justify-between">
-													<span className="text-foreground/70">Total a Pagar:</span>
-													<span className="font-bold text-primary">$59,640</span>
+													<span className="text-foreground/70">
+														Total a Pagar:
+													</span>
+													<span className="font-bold text-primary">
+														$59,640
+													</span>
 												</div>
 												<div className="flex justify-between">
 													<span className="text-foreground/70">Intereses:</span>
@@ -130,9 +170,9 @@ export default function FinanciamientoPage() {
 											</div>
 										</CardBody>
 									</Card>
-									<Button 
-										color="primary" 
-										size="lg" 
+									<Button
+										color="primary"
+										size="lg"
 										fullWidth
 										startContent={<FaClipboardList className="w-5 h-5" />}
 									>
@@ -146,7 +186,9 @@ export default function FinanciamientoPage() {
 								<CardHeader>
 									<div className="flex items-center">
 										<FaClipboardList className="w-6 h-6 text-primary mr-3" />
-										<h2 className="text-2xl font-bold text-primary">Solicitud de Financiamiento</h2>
+										<h2 className="text-2xl font-bold text-primary">
+											Solicitud de Financiamiento
+										</h2>
 									</div>
 								</CardHeader>
 								<CardBody className="space-y-6">
@@ -180,9 +222,7 @@ export default function FinanciamientoPage() {
 										variant="bordered"
 									>
 										{clientTypes.map((type) => (
-											<SelectItem key={type.value} value={type.value}>
-												{type.label}
-											</SelectItem>
+											<SelectItem key={type.value}>{type.label}</SelectItem>
 										))}
 									</Select>
 									<Select
@@ -191,7 +231,7 @@ export default function FinanciamientoPage() {
 										variant="bordered"
 									>
 										{equipmentTypes.map((equipment) => (
-											<SelectItem key={equipment.value} value={equipment.value}>
+											<SelectItem key={equipment.value}>
 												{equipment.label}
 											</SelectItem>
 										))}
@@ -202,9 +242,9 @@ export default function FinanciamientoPage() {
 										variant="bordered"
 										rows={3}
 									/>
-									<Button 
-										color="primary" 
-										size="lg" 
+									<Button
+										color="primary"
+										size="lg"
 										fullWidth
 										startContent={<FaHandshake className="w-5 h-5" />}
 									>
@@ -229,8 +269,12 @@ export default function FinanciamientoPage() {
 												<benefit.icon className="w-5 h-5 text-primary" />
 											</div>
 											<div>
-												<h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-												<p className="text-foreground/70 mb-3">{benefit.description}</p>
+												<h3 className="text-lg font-semibold mb-2">
+													{benefit.title}
+												</h3>
+												<p className="text-foreground/70 mb-3">
+													{benefit.description}
+												</p>
 												<ul className="text-sm text-foreground/60 space-y-1">
 													{benefit.details.map((detail, idx) => (
 														<li key={idx} className="flex items-center">
@@ -257,10 +301,16 @@ export default function FinanciamientoPage() {
 								<Card key={index} className="text-center">
 									<CardBody className="p-6">
 										<div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-											<span className="text-2xl font-bold text-white">{index + 1}</span>
+											<span className="text-2xl font-bold text-white">
+												{index + 1}
+											</span>
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{requirement.title}</h3>
-										<p className="text-foreground/70 text-sm">{requirement.description}</p>
+										<h3 className="text-lg font-semibold mb-2">
+											{requirement.title}
+										</h3>
+										<p className="text-foreground/70 text-sm">
+											{requirement.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -274,23 +324,33 @@ export default function FinanciamientoPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{clientSegments.map((segment, index) => (
-								<Card key={index} className="text-center hover:shadow-lg transition-shadow">
+								<Card
+									key={index}
+									className="text-center hover:shadow-lg transition-shadow"
+								>
 									<CardBody className="p-8">
 										<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<segment.icon className="w-10 h-10 text-primary" />
 										</div>
-										<h3 className="text-xl font-bold text-primary mb-2">{segment.title}</h3>
-										<p className="text-foreground/70 mb-4">{segment.description}</p>
+										<h3 className="text-xl font-bold text-primary mb-2">
+											{segment.title}
+										</h3>
+										<p className="text-foreground/70 mb-4">
+											{segment.description}
+										</p>
 										<ul className="text-sm text-foreground/60 mb-6 space-y-1">
 											{segment.features.map((feature, idx) => (
-												<li key={idx} className="flex items-center justify-center">
+												<li
+													key={idx}
+													className="flex items-center justify-center"
+												>
 													<BiCheck className="w-4 h-4 text-green-500 mr-2" />
 													{feature}
 												</li>
 											))}
 										</ul>
-										<Button 
-											color="primary" 
+										<Button
+											color="primary"
 											variant="bordered"
 											fullWidth
 											startContent={<FaHandshake className="w-4 h-4" />}
@@ -311,20 +371,21 @@ export default function FinanciamientoPage() {
 									¿Listo para adquirir tu equipo médico?
 								</h2>
 								<p className="text-foreground/70 mb-6">
-									Nuestros asesores financieros están listos para ayudarte a encontrar la mejor 
-									opción de financiamiento para tu inversión en tecnología médica.
+									Nuestros asesores financieros están listos para ayudarte a
+									encontrar la mejor opción de financiamiento para tu inversión
+									en tecnología médica.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
-									<Button 
-										color="primary" 
+									<Button
+										color="primary"
 										size="lg"
 										startContent={<BiCalculator className="w-5 h-5" />}
 									>
 										Calcular Financiamiento
 									</Button>
-									<Button 
-										variant="bordered" 
-										color="primary" 
+									<Button
+										variant="bordered"
+										color="primary"
 										size="lg"
 										startContent={<FaHandshake className="w-5 h-5" />}
 									>
@@ -343,7 +404,8 @@ export default function FinanciamientoPage() {
 const financingOptions = [
 	{
 		title: "Básico",
-		description: "Ideal para equipos de diagnóstico básico y consultorios pequeños.",
+		description:
+			"Ideal para equipos de diagnóstico básico y consultorios pequeños.",
 		rate: "8.5%",
 		term: "Hasta 24 meses",
 		icon: BiMoney,
@@ -353,12 +415,13 @@ const financingOptions = [
 			"Aprobación en 48 horas",
 			"Sin garantías adicionales",
 			"Pagos fijos mensuales",
-			"Prepago sin penalidad"
+			"Prepago sin penalidad",
 		],
 	},
 	{
 		title: "Profesional",
-		description: "Para clínicas y hospitales que requieren equipos especializados.",
+		description:
+			"Para clínicas y hospitales que requieren equipos especializados.",
 		rate: "7.2%",
 		term: "Hasta 60 meses",
 		icon: MdBusinessCenter,
@@ -369,7 +432,7 @@ const financingOptions = [
 			"Seguro de vida incluido",
 			"Cuotas flexibles",
 			"Asesoría financiera",
-			"Mantenimiento incluido primer año"
+			"Mantenimiento incluido primer año",
 		],
 	},
 	{
@@ -385,7 +448,7 @@ const financingOptions = [
 			"Estructuras personalizadas",
 			"Múltiples garantías",
 			"Gerente de cuenta dedicado",
-			"Mantenimiento extendido"
+			"Mantenimiento extendido",
 		],
 	},
 ];
@@ -427,13 +490,14 @@ const equipmentTypes = [
 const financingBenefits = [
 	{
 		title: "Preservación de Capital",
-		description: "Mantén tu capital de trabajo disponible para otras inversiones críticas.",
+		description:
+			"Mantén tu capital de trabajo disponible para otras inversiones críticas.",
 		icon: MdAccountBalance,
 		details: [
 			"Flujo de caja mejorado",
 			"Liquidez preservada",
 			"Oportunidades de inversión",
-			"Gestión eficiente de recursos"
+			"Gestión eficiente de recursos",
 		],
 	},
 	{
@@ -444,7 +508,7 @@ const financingBenefits = [
 			"Deducciones por depreciación",
 			"Gastos financieros deducibles",
 			"Planificación fiscal optimizada",
-			"Asesoría contable incluida"
+			"Asesoría contable incluida",
 		],
 	},
 	{
@@ -455,7 +519,7 @@ const financingBenefits = [
 			"Cuotas escalonadas",
 			"Períodos de gracia",
 			"Pagos estacionales",
-			"Prepagos sin penalidad"
+			"Prepagos sin penalidad",
 		],
 	},
 	{
@@ -466,7 +530,7 @@ const financingBenefits = [
 			"Seguro de vida incluido",
 			"Cobertura por incapacidad",
 			"Seguro del equipo",
-			"Garantía extendida disponible"
+			"Garantía extendida disponible",
 		],
 	},
 ];
@@ -474,11 +538,13 @@ const financingBenefits = [
 const requirements = [
 	{
 		title: "Documentación",
-		description: "Presenta los documentos requeridos para la evaluación crediticia.",
+		description:
+			"Presenta los documentos requeridos para la evaluación crediticia.",
 	},
 	{
 		title: "Evaluación",
-		description: "Revisión y análisis de tu perfil crediticio y capacidad de pago.",
+		description:
+			"Revisión y análisis de tu perfil crediticio y capacidad de pago.",
 	},
 	{
 		title: "Aprobación",
@@ -486,42 +552,46 @@ const requirements = [
 	},
 	{
 		title: "Desembolso",
-		description: "Entrega del equipo una vez firmado el contrato de financiamiento.",
+		description:
+			"Entrega del equipo una vez firmado el contrato de financiamiento.",
 	},
 ];
 
 const clientSegments = [
 	{
 		title: "Hospitales",
-		description: "Instituciones médicas de alta complejidad que requieren equipos especializados.",
+		description:
+			"Instituciones médicas de alta complejidad que requieren equipos especializados.",
 		icon: MdAccountBalance,
 		features: [
 			"Montos hasta $5 millones",
 			"Plazos hasta 84 meses",
 			"Tasas preferenciales",
-			"Estructuras personalizadas"
+			"Estructuras personalizadas",
 		],
 	},
 	{
 		title: "Clínicas Privadas",
-		description: "Centros médicos privados en crecimiento que buscan modernizar sus equipos.",
+		description:
+			"Centros médicos privados en crecimiento que buscan modernizar sus equipos.",
 		icon: MdBusinessCenter,
 		features: [
 			"Montos hasta $1 millón",
 			"Procesos ágiles",
 			"Garantías flexibles",
-			"Soporte técnico incluido"
+			"Soporte técnico incluido",
 		],
 	},
 	{
 		title: "Profesionales",
-		description: "Médicos especialistas que establecen o expanden su práctica privada.",
+		description:
+			"Médicos especialistas que establecen o expanden su práctica privada.",
 		icon: FaHandshake,
 		features: [
 			"Montos hasta $200,000",
 			"Aprobación rápida",
 			"Requisitos simplificados",
-			"Asesoría personalizada"
+			"Asesoría personalizada",
 		],
 	},
 ];

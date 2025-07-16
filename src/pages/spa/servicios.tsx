@@ -1,11 +1,16 @@
-import { title, subtitle } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
-import { Card, CardBody, CardHeader, Button } from "@heroui/react";
-import { PiTowel } from "react-icons/pi";
-import { BiTime, BiShield, BiSupport, BiStar } from "react-icons/bi";
-import { FaHandsHelping, FaLeaf, FaHeart, FaGem } from "react-icons/fa";
-import { MdSpa, MdLocalFlorist, MdNaturePeople, MdSelfImprovement } from "react-icons/md";
+import { Button, Card, CardBody, CardHeader } from "@heroui/react";
+import { BiShield, BiStar, BiSupport } from "react-icons/bi";
+import { FaGem, FaHandsHelping, FaHeart, FaLeaf } from "react-icons/fa";
 import { GiFlowers, GiLotusFlower } from "react-icons/gi";
+import {
+	MdLocalFlorist,
+	MdNaturePeople,
+	MdSelfImprovement,
+	MdSpa,
+} from "react-icons/md";
+import { PiTowel } from "react-icons/pi";
+import { subtitle, title } from "@/components/primitives";
+import DefaultLayout from "@/layouts/default";
 
 export default function ServiciosPage() {
 	return (
@@ -16,14 +21,13 @@ export default function ServiciosPage() {
 					<section className="text-center mb-16">
 						<div className="flex items-center justify-center mb-6">
 							<PiTowel className="w-16 h-16 text-primary mr-4" />
-							<h1 className={title({ size: "lg" })}>
-								Servicios de Spa
-							</h1>
+							<h1 className={title({ size: "lg" })}>Servicios de Spa</h1>
 						</div>
 						<p className={subtitle({ class: "text-center mx-auto max-w-2xl" })}>
-							Experimenta la relajación y el bienestar total en nuestro spa. Ofrecemos una amplia 
-							gama de tratamientos diseñados para revitalizar tu cuerpo, mente y espíritu con 
-							técnicas profesionales y productos de la más alta calidad.
+							Experimenta la relajación y el bienestar total en nuestro spa.
+							Ofrecemos una amplia gama de tratamientos diseñados para
+							revitalizar tu cuerpo, mente y espíritu con técnicas profesionales
+							y productos de la más alta calidad.
 						</p>
 					</section>
 
@@ -42,12 +46,18 @@ export default function ServiciosPage() {
 													<service.icon className="w-6 h-6 text-primary" />
 												</div>
 												<div>
-													<h3 className="text-xl font-semibold">{service.title}</h3>
-													<p className="text-sm text-foreground/60">{service.duration}</p>
+													<h3 className="text-xl font-semibold">
+														{service.title}
+													</h3>
+													<p className="text-sm text-foreground/60">
+														{service.duration}
+													</p>
 												</div>
 											</div>
 											<div className="text-right">
-												<span className="text-2xl font-bold text-primary">{service.price}</span>
+												<span className="text-2xl font-bold text-primary">
+													{service.price}
+												</span>
 											</div>
 										</div>
 									</CardHeader>
@@ -57,14 +67,17 @@ export default function ServiciosPage() {
 										</p>
 										<div className="flex flex-wrap gap-2 mb-4">
 											{service.benefits.map((benefit, idx) => (
-												<span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+												<span
+													key={idx}
+													className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
+												>
 													{benefit}
 												</span>
 											))}
 										</div>
-										<Button 
-											color="primary" 
-											variant="flat" 
+										<Button
+											color="primary"
+											variant="flat"
 											fullWidth
 											startContent={<MdSpa className="w-4 h-4" />}
 										>
@@ -83,16 +96,23 @@ export default function ServiciosPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 							{serviceCategories.map((category, index) => (
-								<Card key={index} className="text-center hover:shadow-lg transition-shadow">
+								<Card
+									key={index}
+									className="text-center hover:shadow-lg transition-shadow"
+								>
 									<CardBody className="p-6">
 										<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<category.icon className="w-8 h-8 text-primary" />
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{category.title}</h3>
-										<p className="text-foreground/70 text-sm mb-4">{category.description}</p>
-										<Button 
-											color="primary" 
-											variant="bordered" 
+										<h3 className="text-lg font-semibold mb-2">
+											{category.title}
+										</h3>
+										<p className="text-foreground/70 text-sm mb-4">
+											{category.description}
+										</p>
+										<Button
+											color="primary"
+											variant="bordered"
 											size="sm"
 											fullWidth
 										>
@@ -118,11 +138,19 @@ export default function ServiciosPage() {
 												<treatment.icon className="w-5 h-5 text-primary" />
 											</div>
 											<div className="flex-1">
-												<h3 className="text-lg font-semibold mb-2">{treatment.title}</h3>
-												<p className="text-foreground/70 mb-3">{treatment.description}</p>
+												<h3 className="text-lg font-semibold mb-2">
+													{treatment.title}
+												</h3>
+												<p className="text-foreground/70 mb-3">
+													{treatment.description}
+												</p>
 												<div className="flex justify-between items-center mb-3">
-													<span className="text-sm text-foreground/60">{treatment.duration}</span>
-													<span className="text-lg font-bold text-primary">{treatment.price}</span>
+													<span className="text-sm text-foreground/60">
+														{treatment.duration}
+													</span>
+													<span className="text-lg font-bold text-primary">
+														{treatment.price}
+													</span>
 												</div>
 												<ul className="text-sm text-foreground/60 space-y-1">
 													{treatment.includes.map((item, idx) => (
@@ -150,10 +178,16 @@ export default function ServiciosPage() {
 								<Card key={index} className="text-center">
 									<CardBody className="p-6">
 										<div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-											<span className="text-2xl font-bold text-white">{index + 1}</span>
+											<span className="text-2xl font-bold text-white">
+												{index + 1}
+											</span>
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{experience.title}</h3>
-										<p className="text-foreground/70 text-sm">{experience.description}</p>
+										<h3 className="text-lg font-semibold mb-2">
+											{experience.title}
+										</h3>
+										<p className="text-foreground/70 text-sm">
+											{experience.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -172,8 +206,12 @@ export default function ServiciosPage() {
 										<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<reason.icon className="w-8 h-8 text-primary" />
 										</div>
-										<h3 className="text-lg font-semibold mb-2">{reason.title}</h3>
-										<p className="text-foreground/70 text-sm">{reason.description}</p>
+										<h3 className="text-lg font-semibold mb-2">
+											{reason.title}
+										</h3>
+										<p className="text-foreground/70 text-sm">
+											{reason.description}
+										</p>
 									</CardBody>
 								</Card>
 							))}
@@ -188,20 +226,21 @@ export default function ServiciosPage() {
 									¿Listo para relajarte?
 								</h2>
 								<p className="text-foreground/70 mb-6">
-									Reserva tu experiencia de spa ideal y deja que nuestros expertos terapeutas 
-									te guíen hacia un estado de relajación y bienestar total.
+									Reserva tu experiencia de spa ideal y deja que nuestros
+									expertos terapeutas te guíen hacia un estado de relajación y
+									bienestar total.
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
-									<Button 
-										color="primary" 
+									<Button
+										color="primary"
 										size="lg"
 										startContent={<MdSpa className="w-5 h-5" />}
 									>
 										Reservar Ahora
 									</Button>
-									<Button 
-										variant="bordered" 
-										color="primary" 
+									<Button
+										variant="bordered"
+										color="primary"
 										size="lg"
 										startContent={<BiStar className="w-5 h-5" />}
 									>
@@ -220,7 +259,8 @@ export default function ServiciosPage() {
 const spaServices = [
 	{
 		title: "Masaje Relajante",
-		description: "Masaje corporal completo con aceites esenciales para liberar tensiones y estrés.",
+		description:
+			"Masaje corporal completo con aceites esenciales para liberar tensiones y estrés.",
 		duration: "60 minutos",
 		price: "$80",
 		icon: FaHandsHelping,
@@ -228,7 +268,8 @@ const spaServices = [
 	},
 	{
 		title: "Facial Rejuvenecedor",
-		description: "Tratamiento facial profundo con productos naturales para revitalizar la piel.",
+		description:
+			"Tratamiento facial profundo con productos naturales para revitalizar la piel.",
 		duration: "75 minutos",
 		price: "$65",
 		icon: GiFlowers,
@@ -236,7 +277,8 @@ const spaServices = [
 	},
 	{
 		title: "Reflexología",
-		description: "Técnica de masaje en pies que estimula puntos de energía para el bienestar general.",
+		description:
+			"Técnica de masaje en pies que estimula puntos de energía para el bienestar general.",
 		duration: "45 minutos",
 		price: "$45",
 		icon: MdSelfImprovement,
@@ -244,7 +286,8 @@ const spaServices = [
 	},
 	{
 		title: "Aromaterapia",
-		description: "Sesión de relajación con aceites esenciales naturales y técnicas de respiración.",
+		description:
+			"Sesión de relajación con aceites esenciales naturales y técnicas de respiración.",
 		duration: "50 minutos",
 		price: "$55",
 		icon: MdLocalFlorist,
@@ -252,7 +295,8 @@ const spaServices = [
 	},
 	{
 		title: "Exfoliación Corporal",
-		description: "Tratamiento exfoliante que renueva la piel y mejora su textura naturalmente.",
+		description:
+			"Tratamiento exfoliante que renueva la piel y mejora su textura naturalmente.",
 		duration: "40 minutos",
 		price: "$50",
 		icon: GiLotusFlower,
@@ -260,7 +304,8 @@ const spaServices = [
 	},
 	{
 		title: "Hidroterapia",
-		description: "Baños terapéuticos con sales minerales y aceites para relajación profunda.",
+		description:
+			"Baños terapéuticos con sales minerales y aceites para relajación profunda.",
 		duration: "35 minutos",
 		price: "$60",
 		icon: FaLeaf,
@@ -294,7 +339,8 @@ const serviceCategories = [
 const specializedTreatments = [
 	{
 		title: "Masaje de Piedras Calientes",
-		description: "Técnica ancestral que utiliza piedras volcánicas para liberar tensiones profundas.",
+		description:
+			"Técnica ancestral que utiliza piedras volcánicas para liberar tensiones profundas.",
 		duration: "90 minutos",
 		price: "$120",
 		icon: FaGem,
@@ -302,12 +348,13 @@ const specializedTreatments = [
 			"Preparación con aceites esenciales",
 			"Masaje con piedras calientes",
 			"Relajación post-tratamiento",
-			"Infusión de hierbas incluida"
+			"Infusión de hierbas incluida",
 		],
 	},
 	{
 		title: "Ritual de Belleza Completo",
-		description: "Experiencia integral que incluye facial, corporal y relajación mental.",
+		description:
+			"Experiencia integral que incluye facial, corporal y relajación mental.",
 		duration: "3 horas",
 		price: "$200",
 		icon: FaHeart,
@@ -315,12 +362,13 @@ const specializedTreatments = [
 			"Facial purificante y nutritivo",
 			"Exfoliación corporal completa",
 			"Masaje relajante de 60 min",
-			"Hidratación y aromaterapia"
+			"Hidratación y aromaterapia",
 		],
 	},
 	{
 		title: "Terapia de Desintoxicación",
-		description: "Programa especial para eliminar toxinas y revitalizar el organismo.",
+		description:
+			"Programa especial para eliminar toxinas y revitalizar el organismo.",
 		duration: "2 horas",
 		price: "$150",
 		icon: FaLeaf,
@@ -328,7 +376,7 @@ const specializedTreatments = [
 			"Sauna infrarroja",
 			"Envoltura corporal desintoxicante",
 			"Masaje drenante linfático",
-			"Bebida detox natural"
+			"Bebida detox natural",
 		],
 	},
 	{
@@ -341,7 +389,7 @@ const specializedTreatments = [
 			"Evaluación profesional",
 			"Masaje adaptado al embarazo",
 			"Posiciones cómodas y seguras",
-			"Aceites seguros para embarazadas"
+			"Aceites seguros para embarazadas",
 		],
 	},
 ];
@@ -349,41 +397,49 @@ const specializedTreatments = [
 const spaExperience = [
 	{
 		title: "Bienvenida",
-		description: "Recepción personalizada con bata, pantuflas y bebida relajante.",
+		description:
+			"Recepción personalizada con bata, pantuflas y bebida relajante.",
 	},
 	{
 		title: "Preparación",
-		description: "Evaluación individual y preparación del ambiente según tus necesidades.",
+		description:
+			"Evaluación individual y preparación del ambiente según tus necesidades.",
 	},
 	{
 		title: "Tratamiento",
-		description: "Servicio profesional en ambiente tranquilo con música relajante.",
+		description:
+			"Servicio profesional en ambiente tranquilo con música relajante.",
 	},
 	{
 		title: "Relajación",
-		description: "Tiempo de descanso post-tratamiento con infusiones naturales.",
+		description:
+			"Tiempo de descanso post-tratamiento con infusiones naturales.",
 	},
 ];
 
 const whyChooseUs = [
 	{
 		title: "Profesionales Certificados",
-		description: "Terapeutas altamente capacitados con certificaciones internacionales.",
+		description:
+			"Terapeutas altamente capacitados con certificaciones internacionales.",
 		icon: BiShield,
 	},
 	{
 		title: "Productos Premium",
-		description: "Utilizamos solo productos orgánicos y naturales de la más alta calidad.",
+		description:
+			"Utilizamos solo productos orgánicos y naturales de la más alta calidad.",
 		icon: FaLeaf,
 	},
 	{
 		title: "Ambiente Relajante",
-		description: "Espacios diseñados para crear una atmósfera de paz y tranquilidad.",
+		description:
+			"Espacios diseñados para crear una atmósfera de paz y tranquilidad.",
 		icon: MdSpa,
 	},
 	{
 		title: "Atención Personalizada",
-		description: "Cada tratamiento se adapta a tus necesidades y preferencias específicas.",
+		description:
+			"Cada tratamiento se adapta a tus necesidades y preferencias específicas.",
 		icon: BiSupport,
 	},
 ];
