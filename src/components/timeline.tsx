@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Button } from "@heroui/button";
+import { Link } from "@heroui/react";
 
 const milestones = [
 	{
@@ -10,7 +11,7 @@ const milestones = [
 	},
 	{
 		year: "2021",
-		title: "Primera Expansion - Clinica",
+		title: "Primera Expansionsenal - Clinica",
 		body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet sapien tincidunt, vestibulum eros vitae, euismod lorem. Ut eu ante mauris. Ut dolor sem, luctus.",
 	},
 	{
@@ -61,20 +62,25 @@ export const Timeline = () => {
 			if (!section) return;
 
 			const rect = section.getBoundingClientRect();
-			const windowHeight = window.innerHeight * 0.7;
+			const windowHeight = window.innerHeight;
+			const triggerPoint = windowHeight * 0.5; // Trigger when item is halfway in viewport
 
-			if (rect.top <= 0 && rect.bottom >= windowHeight) {
+			if (rect.top <= 0 && rect.bottom >= triggerPoint) {
 				const scrollY = window.scrollY;
 				const offsetTop = section.offsetTop;
 				const localScroll = scrollY - offsetTop;
 
-				const itemHeight = windowHeight;
+				// Adjust itemHeight to better match the actual height of each accordion item
+				const itemHeight = windowHeight * 0.85; // Slightly increased to ensure smoother transitions
 				const index = Math.min(
 					Math.floor(localScroll / itemHeight),
 					milestones.length - 1,
 				);
 
 				setSelected([String(index)]);
+			} else if (rect.bottom < triggerPoint) {
+				// Ensure the last item is selected when the section is near the bottom
+				setSelected([String(milestones.length - 1)]);
 			}
 		};
 
@@ -85,15 +91,14 @@ export const Timeline = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className={`relative ${!isDesktop ? "my-8 md:my-12" : ""}`} // Add margins on mobile
+			className={`relative ${!isDesktop ? "my-8 md:my-12" : ""}`}
 			style={{
-				height: isDesktop ? `${(milestones.length + 1) * 100}vh` : "auto",
+				height: isDesktop ? `${milestones.length * 100}vh` : "auto", // Reduced height per item
+				maxHeight: isDesktop ? `${milestones.length * 100}vh` : "none",
 			}}
 		>
 			<div
-				className={`${
-					isDesktop ? "sticky top-0 h-screen" : ""
-				} flex items-center`}
+				className={`${isDesktop ? "sticky top-0 h-dvh" : ""} flex items-center`}
 			>
 				<div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 					{/* TEXT - On top for mobile, left for desktop */}
@@ -120,6 +125,9 @@ export const Timeline = () => {
 							variant="ghost"
 							className="hover:text-white font-semibold"
 							color="primary"
+							href="/conocenos"
+							as={Link}
+							target="_top"
 						>
 							Conocenos
 							<svg
@@ -168,12 +176,20 @@ export const Timeline = () => {
 									title={
 										<div className="flex flex-col">
 											<span
-												className={`text-sm font-semibold text-primary ${selected[0] === i.toString() ? "text-secondary-500" : "text-primary-500"}`}
+												className={`text-sm font-semibold text-primary ${
+													selected[0] === i.toString()
+														? "text-secondary-500"
+														: "text-primary-500"
+												}`}
 											>
 												{m.year}
 											</span>
 											<span
-												className={`text-lg font-bold ${selected[0] === i.toString() ? "text-primary-500" : "text-primary-300"}`}
+												className={`text-lg font-bold ${
+													selected[0] === i.toString()
+														? "text-primary-500"
+														: "text-primary-300"
+												}`}
 											>
 												{m.title}
 											</span>
