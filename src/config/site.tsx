@@ -59,6 +59,10 @@ export const siteConfig = {
 				{ label: "Financiamiento", href: "/importadora/financiamiento" },
 			],
 		},
+		{
+			label: "Contactanos",
+			href: "/contactanos",
+		},
 	],
 	navMenuItems: [
 		{
@@ -110,6 +114,10 @@ export const siteConfig = {
 				{ label: "Equipo", href: "/importadora/equipo" },
 				{ label: "Financiamiento", href: "/importadora/financiamiento" },
 			],
+		},
+		{
+			label: "Contactanos",
+			href: "/contactanos",
 		},
 	],
 	services: [
