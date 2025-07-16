@@ -11,6 +11,8 @@ import KitsPage from "@/pages/farmacurate/kits";
 import IndexPage from "@/pages/index";
 import ServiciosLaboratorioPage from "@/pages/laboratorio/servicios";
 import HazTuCitaPage from "@/pages/laboratorio/haz-tu-cita";
+import ServiciosSpaPage from "@/pages/spa/servicios";
+import PlanesSpaPage from "@/pages/spa/planes";
 import ServicesPage from "@/pages/services";
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
 			<Route element={<KitsPage />} path="/farmacurate/kits" />
 			<Route element={<ServiciosLaboratorioPage />} path="/laboratorio/servicios" />
 			<Route element={<HazTuCitaPage />} path="/laboratorios/haz-tu-cita" />
+			<Route element={<ServiciosSpaPage />} path="/spa/servicios" />
+			<Route element={<PlanesSpaPage />} path="/spa/planes" />
 			<Route element={<ServicesPage />} path="/services" />
 			<Route element={<BlogPage />} path="/blog" />
 			<Route element={<AboutPage />} path="/conocenos" />
