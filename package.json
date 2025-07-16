@@ -1,6 +1,7 @@
 {
 	"name": "vite-template",
 	"private": true,
+	"homepage": "https://guimo7.github.io/grupocami",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
