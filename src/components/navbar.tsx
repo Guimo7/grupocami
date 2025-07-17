@@ -86,7 +86,7 @@ export const Navbar = () => {
 			<NavbarBrand className="flex items-center gap-2 max-w-fit">
 				<Link to="/" className="flex items-center gap-2 max-w-fit">
 					<Image
-						src="/Logo_Imagotipo.svg"
+						src="./Logo_Imagotipo.svg"
 						alt="CAMI Logo"
 						width={32}
 						height={32}

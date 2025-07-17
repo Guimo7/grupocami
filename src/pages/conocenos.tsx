@@ -57,7 +57,7 @@ export default function ConocenosPage() {
 						</div>
 						<div>
 							<Image
-								src="/mission.jpg"
+								src="./mission.jpg"
 								alt="Our Mission"
 								width={500}
 								height={400}
@@ -72,7 +72,7 @@ export default function ConocenosPage() {
 					<div className="grid md:grid-cols-2 gap-12 items-center">
 						<div className="order-2 md:order-1">
 							<Image
-								src="/vision.jpg"
+								src="./vision.jpg"
 								alt="Our Vision"
 								width={500}
 								height={400}

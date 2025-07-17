@@ -12,7 +12,7 @@ export const About = () => {
 							<Card className="shadow-2xl border-none bg-white/80 backdrop-blur-sm">
 								<CardBody className="p-0">
 									<Image
-										src="/mission.jpg"
+										src="./mission.jpg"
 										alt="Mission Team"
 										className="w-full h-full object-cover rounded-lg"
 									/>
@@ -43,7 +43,7 @@ export const About = () => {
 							<Card className="shadow-2xl border-none bg-white/80 backdrop-blur-sm">
 								<CardBody className="p-0">
 									<Image
-										src="/vision.jpg"
+										src="./vision.jpg"
 										alt="Vision Team"
 										className="w-full h-full object-cover rounded-lg"
 									/>
