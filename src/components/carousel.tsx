@@ -2,6 +2,11 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect } from "react";
 
+// Import images
+import carrousel1 from "/carrousel1.png";
+import carrousel2 from "/carrousel2.png";
+import carrousel3 from "/carrousel3.png";
+
 export const Carousel = () => {
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
 		Autoplay({ delay: 6000, stopOnMouseEnter: true, stopOnInteraction: false }),
@@ -30,13 +35,13 @@ export const Carousel = () => {
 							Book an Appointment
 						</Button>
 					</div> */}
-					<img src="./carrousel1.png" alt="Carrusel1" />
+					<img src={carrousel1} alt="Carrusel1" />
 				</div>
 				<div className="embla__slide w-full h-[500px] bg-blue-50 flex items-center justify-center">
-					<img src="./carrousel2.png" alt="Carrusel2" />
+					<img src={carrousel2} alt="Carrusel2" />
 				</div>
 				<div className="embla__slide w-full h-[500px] bg-blue-50 flex items-center justify-center">
-					<img src="./carrousel3.png" alt="Carrusel3" />
+					<img src={carrousel3} alt="Carrusel3" />
 				</div>
 			</div>
 		</div>

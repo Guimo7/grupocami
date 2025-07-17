@@ -22,6 +22,9 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 
+// Import logo
+import logoImageotipo from "/Logo_Imagotipo.svg";
+
 export const Navbar = () => {
 	// Refs for underline animations
 	const underlineRefs = useRef<(HTMLSpanElement | null)[]>([]);
@@ -86,7 +89,7 @@ export const Navbar = () => {
 			<NavbarBrand className="flex items-center gap-2 max-w-fit">
 				<Link to="/" className="flex items-center gap-2 max-w-fit">
 					<Image
-						src="./Logo_Imagotipo.svg"
+						src={logoImageotipo}
 						alt="CAMI Logo"
 						width={32}
 						height={32}

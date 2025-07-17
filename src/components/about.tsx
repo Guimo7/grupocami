@@ -1,6 +1,10 @@
 import { Card, CardBody, Image } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 
+// Import images
+import missionImg from "/mission.jpg";
+import visionImg from "/vision.jpg";
+
 export const About = () => {
 	return (
 		<div className="w-full bg-gradient-to-b from-background to-background/95">
@@ -12,7 +16,7 @@ export const About = () => {
 							<Card className="shadow-2xl border-none bg-white/80 backdrop-blur-sm">
 								<CardBody className="p-0">
 									<Image
-										src="./mission.jpg"
+										src={missionImg}
 										alt="Mission Team"
 										className="w-full h-full object-cover rounded-lg"
 									/>
@@ -43,7 +47,7 @@ export const About = () => {
 							<Card className="shadow-2xl border-none bg-white/80 backdrop-blur-sm">
 								<CardBody className="p-0">
 									<Image
-										src="./vision.jpg"
+										src={visionImg}
 										alt="Vision Team"
 										className="w-full h-full object-cover rounded-lg"
 									/>

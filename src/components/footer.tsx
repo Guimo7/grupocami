@@ -3,12 +3,15 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { siteConfig } from "@/config/site";
 import { Map } from "./map";
 
+// Import logo
+import logoRectangulo from "/Logo_Rectangulo.svg";
+
 export const Footer = () => {
 	return (
 		<footer className="w-full flex flex-col gap-6 items-center justify-between px-6 py-6 bg-primary text-white md:flex-row md:items-start md:gap-10">
 			{/* Logo */}
 			<div className="flex flex-col items-center md:items-start md:w-1/3">
-				<Image src="./Logo_Rectangulo.svg" alt="Logo" width="100%" />
+				<Image src={logoRectangulo} alt="Logo" width="100%" />
 			</div>
 
 			{/* Contact Info */}

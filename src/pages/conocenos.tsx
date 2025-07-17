@@ -2,6 +2,10 @@ import { Card, CardBody, Image } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import DefaultLayout from "@/layouts/default";
 
+// Import images
+import missionImg from "/mission.jpg";
+import visionImg from "/vision.jpg";
+
 export default function ConocenosPage() {
 	return (
 		<DefaultLayout>
@@ -57,7 +61,7 @@ export default function ConocenosPage() {
 						</div>
 						<div>
 							<Image
-								src="./mission.jpg"
+								src={missionImg}
 								alt="Our Mission"
 								width={500}
 								height={400}
@@ -72,7 +76,7 @@ export default function ConocenosPage() {
 					<div className="grid md:grid-cols-2 gap-12 items-center">
 						<div className="order-2 md:order-1">
 							<Image
-								src="./vision.jpg"
+								src={visionImg}
 								alt="Our Vision"
 								width={500}
 								height={400}
