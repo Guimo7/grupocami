@@ -88,10 +88,10 @@ export const About = () => {
 								<CardBody className="flex flex-col text-center p-8 md:flex-row">
 									{value.iconSrc}
 									<div className="flex flex-col mt-6 lg:ml-6">
-										<h3 className="text-2xl font-bold text-primary text-center lg:text-left group-hover:text-primary/80 transition-colors mb-5">
+										<h3 className="text-2xl font-bold text-primary text-center lg:text-center group-hover:text-primary/80 transition-colors mb-5">
 											{value.title}
 										</h3>
-										<p className="text-foreground/70 leading-relaxed text-left">
+										<p className="text-foreground/70 leading-relaxed text-center">
 											{value.description}
 										</p>
 									</div>

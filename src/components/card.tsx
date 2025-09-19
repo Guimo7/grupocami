@@ -29,7 +29,7 @@ export const Card = (props: ICardProps) => {
 				{<Icon className="w-[32px] h-[32px] text-primary-500" />}
 				<h3 className="font-bold text-3xl text-primary-600">{title}</h3>
 			</CardHeader>
-			<CardBody>{description}</CardBody>
+			<CardBody className="text-center md:text-justify">{description}</CardBody>
 			<CardFooter>
 				{tags.map((tag) => {
 					return (
@@ -38,7 +38,7 @@ export const Card = (props: ICardProps) => {
 								radius="sm"
 								classNames={{
 									content: "font-semibold text-white",
-									base: "bg-secondary-400 hover:bg-secondary-600 transition",
+									base: "bg-primary hover:bg-secondary-600 transition",
 								}}
 							>
 								{tag.label}

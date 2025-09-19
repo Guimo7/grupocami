@@ -1,7 +1,147 @@
-import { Button, Card, CardBody, CardHeader } from "@heroui/react";
-import { BiClinic, BiPhone, BiTime, BiUser } from "react-icons/bi";
+import { Button, Card, CardBody, CardFooter, Chip } from "@heroui/react";
+
+import { BiClinic } from "react-icons/bi";
+import { Image } from "@heroui/image";
 import { subtitle, title } from "@/components/primitives";
+import DrSerrano from "/dr_serrano.jpg";
+import LicAlejandra from "/lic_alejandra.jpg";
+import LicCalderon from "/lic_calderon.jpg";
+import DraCalero from "/dra_claudia.jpg";
+import DraKarla from "/dra_karla.jpg";
+import DraZuri from "/dra_zuri.jpg";
+import DraLuz from "/dra_luz.jpg";
+import DraNadia from "/dra_nadia.jpg";
+import DraKarol from "/dra_karol.jpg";
+import DrVaquerano from "/dr_vaquerano.jpg";
+import LicMadai from "/lic_madai.jpg";
+import LicMonica from "/lic_monica.jpg";
+import Doctor6 from "/doctor6.png";
 import DefaultLayout from "@/layouts/default";
+import { FaWhatsapp } from "react-icons/fa";
+import { siteConfig } from "@/config/site";
+import { handleWhatsAppClick } from "@/helpers";
+
+const consultaServices = [
+	{
+		title: "Dr. Jose Roberto Guzman Berrios",
+		description: "Medicina general y salud ocupacional",
+		icon: Doctor6,
+	},
+	{
+		title: "Dr. Mario Alberto Serrano Sanchez",
+		description: "Medicina interna",
+		icon: DrSerrano,
+	},
+	{
+		title: "Dr. Jose Rolando Aguiluz Guerra",
+		description: "Medicina general y ultrasonografia",
+		icon: Doctor6,
+	},
+	{
+		title: "Lic. Alejandra Michel Lovo",
+		description: "Licenciada en laboratorio clinico",
+		icon: LicAlejandra,
+	},
+	{
+		title: "Lic. Nora Elizabeth Calderon Rodriguez",
+		description: "Licenciada en psicologia",
+		icon: LicCalderon,
+	},
+	{
+		title: "Dra. Karla Guadalupe Diaz Zelaya",
+		description: "Pisquiatra",
+		icon: DraKarla,
+	},
+	{
+		title: "Dra. Zuri Adriana Bazan Molina",
+		description: "Geriatra",
+		icon: DraZuri,
+	},
+	{
+		title: "Dr. Jorge Andres Blanco Gumero",
+		description: "Medicina general",
+		icon: Doctor6,
+	},
+	{
+		title: "Dra. Claudia Dinorah Calero Rivera",
+		description: "Medicina general e hipnoterapeuta",
+		icon: DraCalero,
+	},
+	{
+		title: "Dra. Morena Luz Solis Rivera",
+		description: "Fisiatra",
+		icon: DraLuz,
+	},
+	{
+		title: "Dra. Nadia Patricia Rodriguez Villalta",
+		description: "Medicina interna",
+		icon: DraNadia,
+	},
+	{
+		title: "Dr. David Ernesto Vaquerano",
+		description: "Psiquiatra",
+		icon: DrVaquerano,
+	},
+	{
+		title: "Lic. Betsabe Madai Bermudez Benavides",
+		description: "Licenciada en fisioterapia y terapia ocupacional",
+		icon: LicMadai,
+	},
+	{
+		title: "Dr. Jose Miguel Navarro Hernandez",
+		description: "Otropeda y traumatologia",
+		icon: Doctor6,
+	},
+	{
+		title: "Dra. Karol Michelle Olivares",
+		description: "Dermatologa",
+		icon: DraKarol,
+	},
+	{
+		title: "Lic. Monica Gabriela Hernandez Aquino",
+		description: "Licenciada en fisioterapia y terapia ocupacional",
+		icon: LicMonica,
+	},
+];
+
+const services = [
+	{
+		title: "Medicina General",
+	},
+	{
+		title: "Medicina Interna",
+	},
+	{
+		title: "Psiquiatria",
+	},
+	{
+		title: "Psicologia",
+	},
+	{
+		title: "Ultrasonografia",
+	},
+	{
+		title: "Ortopedia",
+	},
+	{
+		title: "Traumatologia",
+	},
+	{
+		title: "Fisioterapia",
+	},
+	{
+		title: "Geriatria",
+	},
+	{
+		title: "Dermatologia",
+	},
+	{
+		title: "Medicina Holistica",
+	},
+	{
+		title: "Hipnoterapia",
+	},
+];
 
 export default function ConsultaMedicaPage() {
 	return (
@@ -23,25 +163,26 @@ export default function ConsultaMedicaPage() {
 
 					{/* Services Grid */}
 					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center text-primary mb-12">
-							Nuestros Servicios
+						<h2 className="text-3xl font-bold text-center text-primary mb-14">
+							Nuestro Staff Médico
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{consultaServices.map((service, index) => (
-								<Card key={index} className="hover:shadow-lg transition-shadow">
-									<CardHeader className="pb-3">
-										<div className="flex items-center">
-											<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-												<service.icon className="w-6 h-6 text-primary" />
-											</div>
-											<h3 className="text-xl font-semibold">{service.title}</h3>
+								<Card key={index}>
+									<Image
+										src={service.icon}
+										className="z-0 w-full h-full object-cover"
+									/>
+									<CardFooter className="absolute bg-primary bottom-0 z-10 justify-between">
+										<div>
+											<p className="font-nando font-bold text-white text-medium">
+												{service.title}
+											</p>
+											<p className="text-secondary font-nando font-bold">
+												{service.description}
+											</p>
 										</div>
-									</CardHeader>
-									<CardBody>
-										<p className="text-foreground/70 leading-relaxed">
-											{service.description}
-										</p>
-									</CardBody>
+									</CardFooter>
 								</Card>
 							))}
 						</div>
@@ -49,24 +190,22 @@ export default function ConsultaMedicaPage() {
 
 					{/* Process Section */}
 					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center text-primary mb-12">
-							Proceso de Atención
+						<h2 className="text-3xl font-bold text-center text-primary mb-14">
+							Nuestros Servicios
 						</h2>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-							{processSteps.map((step, index) => (
-								<Card key={index} className="text-center">
-									<CardBody className="p-6">
-										<div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-											<span className="text-2xl font-bold text-white">
-												{index + 1}
-											</span>
-										</div>
-										<h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-										<p className="text-foreground/70 text-sm">
-											{step.description}
-										</p>
-									</CardBody>
-								</Card>
+						<div className="grid grid-cols-2 gap-y-4 gap-x-0 md:grid-cols-3 lg:grid-cols-3 place-items-center max-w-3xl mx-auto">
+							{services.map((service, index) => (
+								<Chip
+									key={index}
+									radius="lg"
+									classNames={{
+										base: `${index % 2 === 0 ? "bg-primary" : "bg-secondary"} max-w-[185px] w-full h-[60px]`,
+										content:
+											"font-bold text-white font-nando text-center text-lg",
+									}}
+								>
+									{service.title}
+								</Chip>
 							))}
 						</div>
 					</section>
@@ -84,19 +223,13 @@ export default function ConsultaMedicaPage() {
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
 									<Button
-										color="primary"
-										size="lg"
-										startContent={<BiPhone className="w-5 h-5" />}
+										color="success"
+										variant="solid"
+										startContent={<FaWhatsapp className="w-5 h-5" />}
+										onPress={handleWhatsAppClick}
+										className="w-full"
 									>
-										Llamar Ahora
-									</Button>
-									<Button
-										variant="bordered"
-										color="primary"
-										size="lg"
-										startContent={<BiTime className="w-5 h-5" />}
-									>
-										Agendar Cita
+										Abrir WhatsApp
 									</Button>
 								</div>
 							</CardBody>
@@ -107,64 +240,3 @@ export default function ConsultaMedicaPage() {
 		</DefaultLayout>
 	);
 }
-
-const consultaServices = [
-	{
-		title: "Medicina General",
-		description:
-			"Atención médica integral para toda la familia con enfoque preventivo y curativo.",
-		icon: BiUser,
-	},
-	{
-		title: "Consultas Especializadas",
-		description:
-			"Acceso a especialistas médicos en diferentes áreas de la salud.",
-		icon: BiClinic,
-	},
-	{
-		title: "Atención de Urgencias",
-		description:
-			"Atención médica inmediata para situaciones que requieren intervención rápida.",
-		icon: BiTime,
-	},
-	{
-		title: "Seguimiento Médico",
-		description:
-			"Monitoreo continuo de tu estado de salud y tratamientos en curso.",
-		icon: BiUser,
-	},
-	{
-		title: "Consulta Preventiva",
-		description:
-			"Evaluaciones médicas regulares para prevenir enfermedades y mantener la salud.",
-		icon: BiClinic,
-	},
-	{
-		title: "Telemedicina",
-		description:
-			"Consultas médicas a distancia para mayor comodidad y accesibilidad.",
-		icon: BiPhone,
-	},
-];
-
-const processSteps = [
-	{
-		title: "Reserva tu Cita",
-		description: "Contacta con nosotros para programar tu consulta médica.",
-	},
-	{
-		title: "Evaluación Inicial",
-		description:
-			"Nuestro equipo médico realizará una evaluación completa de tu estado de salud.",
-	},
-	{
-		title: "Diagnóstico",
-		description:
-			"Análisis profesional y diagnóstico preciso de tu condición médica.",
-	},
-	{
-		title: "Plan de Tratamiento",
-		description:
-			"Desarrollo de un plan personalizado para tu recuperación y bienestar.",
-	},
-];

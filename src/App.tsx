@@ -14,10 +14,13 @@ import HazTuCitaPage from "@/pages/laboratorio/haz-tu-cita";
 import ServiciosLaboratorioPage from "@/pages/laboratorio/servicios";
 import PlanesSpaPage from "@/pages/spa/planes";
 import ServiciosSpaPage from "@/pages/spa/servicios";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 function App() {
 	return (
-		<Routes>
+		<>
+			<ScrollToTop />
+			<Routes>
 			<Route element={<IndexPage />} path="/" />
 			<Route element={<ConsultaMedicaPage />} path="/clinica/consulta-medica" />
 			<Route element={<AsesoriaPage />} path="/clinica/asesoria" />
@@ -40,6 +43,7 @@ function App() {
 			<Route element={<ContactanosPage />} path="/contactanos" />
 			<Route element={<ConocenosPage />} path="/conocenos" />
 		</Routes>
+		</>
 	);
 }
 

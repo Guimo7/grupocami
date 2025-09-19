@@ -1,10 +1,121 @@
 import { Button, Card, CardBody, CardHeader } from "@heroui/react";
-import { BiBuilding, BiShield, BiSupport, BiTime } from "react-icons/bi";
+import { BiBuilding, BiSupport, BiTime } from "react-icons/bi";
 import { FaAward, FaClipboardList, FaHandshake, FaTruck } from "react-icons/fa";
 import { LiaPillsSolid } from "react-icons/lia";
-import { MdInventory, MdLocalShipping, MdSecurity } from "react-icons/md";
+import { MdInventory, MdSecurity } from "react-icons/md";
 import { subtitle, title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+
+const empresaServices = [
+	{
+		title: "Botiquines Empresariales",
+		description:
+			"Botiquines de primeros auxilios completos y personalizados según las necesidades específicas de tu empresa.",
+		icon: LiaPillsSolid,
+	},
+	{
+		title: "Suministros Médicos",
+		description:
+			"Amplia gama de suministros médicos para oficinas, fábricas y establecimientos comerciales.",
+		icon: MdInventory,
+	},
+	{
+		title: "Asesoría Especializada",
+		description:
+			"Consultoría en seguridad industrial y salud ocupacional para cumplir con normativas vigentes.",
+		icon: BiSupport,
+	},
+	{
+		title: "Mantenimiento",
+		description:
+			"Servicios de revisión y reposición periódica de productos médicos y botiquines.",
+		icon: BiTime,
+	},
+	{
+		title: "Entrega Rápida",
+		description:
+			"Servicio de entrega rápida y confiable para pedidos urgentes y programados.",
+		icon: FaTruck,
+	},
+];
+
+const productCategories = [
+	{
+		title: "Botiquines de Primeros Auxilios",
+		description:
+			"Botiquines completos para diferentes tipos de empresas y riesgos laborales.",
+		icon: LiaPillsSolid,
+		items: [
+			"Botiquín básico para oficinas",
+			"Botiquín industrial para fábricas",
+			"Botiquín para construcción",
+			"Botiquín para restaurantes",
+			"Botiquín para transporte",
+		],
+	},
+	{
+		title: "Medicamentos y Antisépticos",
+		description:
+			"Medicamentos básicos y productos de desinfección para uso empresarial.",
+		icon: MdSecurity,
+		items: [
+			"Analgésicos básicos",
+			"Antisépticos y desinfectantes",
+			"Vendas y gasas",
+			"Alcohol y agua oxigenada",
+			"Termómetros digitales",
+		],
+	},
+];
+
+const whyChooseUs = [
+	{
+		title: "Calidad Certificada",
+		description:
+			"Todos nuestros productos cuentan con certificaciones médicas y de calidad.",
+		icon: FaAward,
+	},
+	{
+		title: "Precios Competitivos",
+		description:
+			"Ofrecemos los mejores precios del mercado con descuentos por volumen.",
+		icon: BiBuilding,
+	},
+	{
+		title: "Entrega Confiable",
+		description:
+			"Servicio de entrega puntual y seguro en todo el territorio nacional.",
+		icon: FaTruck,
+	},
+	{
+		title: "Soporte Continuo",
+		description: "Atención al cliente 24/7 y soporte técnico especializado.",
+		icon: BiSupport,
+	},
+];
+
+const processSteps = [
+	{
+		title: "Evaluación",
+		description:
+			"Evaluamos las necesidades específicas de tu empresa y tipo de industria.",
+	},
+	{
+		title: "Cotización",
+		description:
+			"Preparamos una cotización personalizada con productos y servicios adecuados.",
+	},
+	{
+		title: "Aprobación",
+		description:
+			"Revisas y apruebas la propuesta, ajustando según tus requerimientos.",
+	},
+	{
+		title: "Entrega",
+		description:
+			"Entregamos e instalamos los productos en tu empresa con capacitación incluida.",
+	},
+];
 
 export default function EmpresasPage() {
 	return (
@@ -172,146 +283,3 @@ export default function EmpresasPage() {
 		</DefaultLayout>
 	);
 }
-
-const empresaServices = [
-	{
-		title: "Botiquines Empresariales",
-		description:
-			"Botiquines de primeros auxilios completos y personalizados según las necesidades específicas de tu empresa.",
-		icon: LiaPillsSolid,
-	},
-	{
-		title: "Suministros Médicos",
-		description:
-			"Amplia gama de suministros médicos para oficinas, fábricas y establecimientos comerciales.",
-		icon: MdInventory,
-	},
-	{
-		title: "Asesoría Especializada",
-		description:
-			"Consultoría en seguridad industrial y salud ocupacional para cumplir con normativas vigentes.",
-		icon: BiSupport,
-	},
-	{
-		title: "Capacitación",
-		description:
-			"Programas de capacitación en primeros auxilios y uso correcto de equipos médicos.",
-		icon: FaAward,
-	},
-	{
-		title: "Mantenimiento",
-		description:
-			"Servicios de revisión y reposición periódica de productos médicos y botiquines.",
-		icon: BiTime,
-	},
-	{
-		title: "Entrega Rápida",
-		description:
-			"Servicio de entrega rápida y confiable para pedidos urgentes y programados.",
-		icon: FaTruck,
-	},
-];
-
-const productCategories = [
-	{
-		title: "Botiquines de Primeros Auxilios",
-		description:
-			"Botiquines completos para diferentes tipos de empresas y riesgos laborales.",
-		icon: LiaPillsSolid,
-		items: [
-			"Botiquín básico para oficinas",
-			"Botiquín industrial para fábricas",
-			"Botiquín para construcción",
-			"Botiquín para restaurantes",
-			"Botiquín para transporte",
-		],
-	},
-	{
-		title: "Equipos de Protección",
-		description:
-			"Elementos de protección personal y equipos de seguridad médica.",
-		icon: BiShield,
-		items: [
-			"Mascarillas y respiradores",
-			"Guantes de diferentes tipos",
-			"Gafas de protección",
-			"Cascos de seguridad",
-			"Ropa de protección",
-		],
-	},
-	{
-		title: "Medicamentos y Antisépticos",
-		description:
-			"Medicamentos básicos y productos de desinfección para uso empresarial.",
-		icon: MdSecurity,
-		items: [
-			"Analgésicos básicos",
-			"Antisépticos y desinfectantes",
-			"Vendas y gasas",
-			"Alcohol y agua oxigenada",
-			"Termómetros digitales",
-		],
-	},
-	{
-		title: "Equipos de Emergencia",
-		description:
-			"Equipos especializados para atención de emergencias en el lugar de trabajo.",
-		icon: MdLocalShipping,
-		items: [
-			"Desfibriladores automáticos",
-			"Camillas plegables",
-			"Oxígeno portátil",
-			"Inmovilizadores",
-			"Kit de quemaduras",
-		],
-	},
-];
-
-const whyChooseUs = [
-	{
-		title: "Calidad Certificada",
-		description:
-			"Todos nuestros productos cuentan con certificaciones médicas y de calidad.",
-		icon: FaAward,
-	},
-	{
-		title: "Precios Competitivos",
-		description:
-			"Ofrecemos los mejores precios del mercado con descuentos por volumen.",
-		icon: BiBuilding,
-	},
-	{
-		title: "Entrega Confiable",
-		description:
-			"Servicio de entrega puntual y seguro en todo el territorio nacional.",
-		icon: FaTruck,
-	},
-	{
-		title: "Soporte Continuo",
-		description: "Atención al cliente 24/7 y soporte técnico especializado.",
-		icon: BiSupport,
-	},
-];
-
-const processSteps = [
-	{
-		title: "Evaluación",
-		description:
-			"Evaluamos las necesidades específicas de tu empresa y tipo de industria.",
-	},
-	{
-		title: "Cotización",
-		description:
-			"Preparamos una cotización personalizada con productos y servicios adecuados.",
-	},
-	{
-		title: "Aprobación",
-		description:
-			"Revisas y apruebas la propuesta, ajustando según tus requerimientos.",
-	},
-	{
-		title: "Entrega",
-		description:
-			"Entregamos e instalamos los productos en tu empresa con capacitación incluida.",
-	},
-];

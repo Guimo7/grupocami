@@ -1,9 +1,28 @@
 import { Button, Card, CardBody, CardHeader } from "@heroui/react";
-import { BiBuilding, BiMoney, BiTime, BiWifi } from "react-icons/bi";
-import { FaCalendarAlt, FaKey, FaStethoscope, FaTools } from "react-icons/fa";
-import { MdMedicalServices, MdSecurity } from "react-icons/md";
+import {
+	BiArchive,
+	BiBuilding,
+	BiCloudLightning,
+	BiMoney,
+	BiNetworkChart,
+	BiPaperclip,
+	BiTime,
+	BiWater,
+	BiWifi,
+} from "react-icons/bi";
+import {
+	FaCalendarAlt,
+	FaKey,
+	FaMoon,
+	FaStethoscope,
+	FaSun,
+	FaTools,
+	FaWhatsapp,
+} from "react-icons/fa";
+import { MdSecurity } from "react-icons/md";
 import { subtitle, title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+import { handleWhatsAppClick } from "@/helpers";
 
 export default function AlquilerPage() {
 	return (
@@ -30,27 +49,26 @@ export default function AlquilerPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{alquilerSpaces.map((space, index) => (
-								<Card key={index} className="hover:shadow-lg transition-shadow">
-									<CardHeader className="pb-3">
-										<div className="flex items-center">
-											<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+								<Card key={index} className="border-2 border-primary">
+									<CardHeader className="pb-3 justify-center">
+										<div className="flex flex-col items-center">
+											<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
 												<space.icon className="w-6 h-6 text-primary" />
 											</div>
-											<h3 className="text-xl font-semibold">{space.title}</h3>
+											<h3 className="text-2xl font-bold text-primary">
+												{space.title}
+											</h3>
 										</div>
 									</CardHeader>
-									<CardBody>
-										<p className="text-foreground/70 leading-relaxed mb-3">
-											{space.description}
-										</p>
-										<div className="flex items-center justify-between">
-											<span className="text-sm text-foreground/60">
-												{space.size}
-											</span>
-											<span className="text-lg font-bold text-primary">
-												{space.price}
-											</span>
-										</div>
+									<CardBody className="">
+										{space.description.map((description, index) => (
+											<p
+												key={index}
+												className="text-foreground/70 mb-3 text-center"
+											>
+												{description}
+											</p>
+										))}
 									</CardBody>
 								</Card>
 							))}
@@ -64,17 +82,22 @@ export default function AlquilerPage() {
 						</h2>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{features.map((feature, index) => (
-								<Card key={index} className="text-center">
-									<CardBody className="p-6">
+								<Card
+									key={index}
+									className="text-center border-2 border-primary"
+								>
+									<CardBody className="p-8">
 										<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 											<feature.icon className="w-8 h-8 text-primary" />
 										</div>
-										<h3 className="text-lg font-semibold mb-2">
-											{feature.title}
-										</h3>
-										<p className="text-foreground/70 text-sm">
-											{feature.description}
-										</p>
+										<div className="flex flex-col items-center">
+											<h3 className="text-2xl font-bold text-primary mb-4">
+												{feature.title}
+											</h3>
+											<p className="text-foreground/70 text-sm text-center">
+												{feature.description}
+											</p>
+										</div>
 									</CardBody>
 								</Card>
 							))}
@@ -90,31 +113,30 @@ export default function AlquilerPage() {
 							{rentalOptions.map((option, index) => (
 								<Card
 									key={index}
-									className="text-center border-2 border-transparent hover:border-primary transition-colors"
+									className="text-center border-2 border-primary transition-colors"
 								>
 									<CardBody className="p-8">
 										<div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
 											<option.icon className="w-10 h-10 text-white" />
 										</div>
-										<h3 className="text-2xl font-bold text-primary mb-2">
-											{option.title}
-										</h3>
-										<p className="text-foreground/70 mb-4">
-											{option.description}
-										</p>
-										<div className="text-3xl font-bold text-primary mb-4">
-											{option.price}
+										<div className="flex flex-col items-center">
+											<h3 className="text-2xl font-bold text-primary mb-2">
+												{option.title}
+											</h3>
+											<p className="text-foreground/70 mb-4 text-center">
+												{option.description}
+											</p>
+											<div className="text-3xl font-bold text-primary mb-4">
+												{option.price}
+											</div>
+											<ul className="text-sm text-foreground/60 mb-6">
+												{option.features.map((feature, idx) => (
+													<li key={idx} className="mb-1">
+														• {feature}
+													</li>
+												))}
+											</ul>
 										</div>
-										<ul className="text-sm text-foreground/60 mb-6">
-											{option.features.map((feature, idx) => (
-												<li key={idx} className="mb-1">
-													• {feature}
-												</li>
-											))}
-										</ul>
-										<Button color="primary" variant="bordered" fullWidth>
-											Consultar Disponibilidad
-										</Button>
 									</CardBody>
 								</Card>
 							))}
@@ -135,19 +157,13 @@ export default function AlquilerPage() {
 								</p>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center">
 									<Button
-										color="primary"
-										size="lg"
-										startContent={<FaCalendarAlt className="w-5 h-5" />}
+										color="success"
+										variant="solid"
+										startContent={<FaWhatsapp className="w-5 h-5" />}
+										onPress={handleWhatsAppClick}
+										className="w-full"
 									>
-										Agendar Visita
-									</Button>
-									<Button
-										variant="bordered"
-										color="primary"
-										size="lg"
-										startContent={<BiMoney className="w-5 h-5" />}
-									>
-										Solicitar Cotización
+										Abrir WhatsApp
 									</Button>
 								</div>
 							</CardBody>
@@ -161,52 +177,28 @@ export default function AlquilerPage() {
 
 const alquilerSpaces = [
 	{
-		title: "Consultorio Médico",
-		description:
-			"Espacio completamente equipado para consultas médicas generales y especializadas.",
-		size: "20 m²",
-		price: "$800/mes",
-		icon: FaStethoscope,
-	},
-	{
-		title: "Sala de Procedimientos",
-		description:
-			"Área especializada para procedimientos menores y tratamientos ambulatorios.",
-		size: "25 m²",
-		price: "$1,200/mes",
-		icon: MdMedicalServices,
-	},
-	{
-		title: "Oficina Administrativa",
-		description:
-			"Espacio para actividades administrativas y de gestión médica.",
-		size: "15 m²",
-		price: "$600/mes",
-		icon: BiBuilding,
-	},
-	{
-		title: "Sala de Espera",
-		description:
-			"Área cómoda y acogedora para pacientes con capacidad para 12 personas.",
-		size: "30 m²",
-		price: "$400/mes",
+		title: "Tiempo Completo",
+		description: [
+			"Lunes a Viernes desde 8:00 AM a 6:00 PM bajo agendamiento previo.",
+			"Sabado desde 7:00 AM a 1:00 PM",
+		],
 		icon: BiTime,
 	},
 	{
-		title: "Consultorio Especializado",
-		description:
-			"Espacio diseñado para especialidades médicas con equipamiento específico.",
-		size: "22 m²",
-		price: "$1,000/mes",
-		icon: FaStethoscope,
+		title: "Horario Matutino",
+		description: [
+			"Lunes a Viernes desde 8:00 AM a 12:00 PM.",
+			"Sabado desde 7:00 AM a 1:00 PM.",
+		],
+		icon: BiTime,
 	},
 	{
-		title: "Área de Trabajo",
-		description:
-			"Espacio flexible para diferentes actividades médicas y administrativas.",
-		size: "18 m²",
-		price: "$700/mes",
-		icon: FaTools,
+		title: "Horario Vespertino",
+		description: [
+			"Lunes a Viernes desde 1:00 PM a 6:00 PM.",
+			"Sabado desde 7:00 AM a 1:00 PM.",
+		],
+		icon: BiTime,
 	},
 ];
 
@@ -245,44 +237,72 @@ const features = [
 			"Ubicación estratégica con fácil acceso y estacionamiento disponible.",
 		icon: BiBuilding,
 	},
+	{
+		title: "Sala de Espera",
+		description:
+			"Área cómoda y acogedora para pacientes con capacidad para 12 personas.",
+		icon: BiTime,
+	},
+	{
+		title: "Marketing en Redes",
+		description: "Promoción de sus servicios en redes sociales incluida.",
+		icon: BiNetworkChart,
+	},
+	{
+		title: "Papelería",
+		description: "Suministros básicos de oficina y papelería médica.",
+		icon: BiPaperclip,
+	},
+	{
+		title: "Recepcionista",
+		description: "Servicio de recepción y atención al cliente incluido.",
+		icon: BiArchive,
+	},
+	{
+		title: "Luz",
+		description: "Servicio de energía eléctrica incluido en el alquiler.",
+		icon: BiCloudLightning,
+	},
+	{
+		title: "Agua",
+		description: "Servicio de agua potable incluido en el alquiler.",
+		icon: BiWater,
+	},
 ];
 
 const rentalOptions = [
 	{
-		title: "Por Horas",
-		description: "Ideal para consultas esporádicas o servicios específicos.",
-		price: "$15/hora",
-		icon: BiTime,
-		features: [
-			"Mínimo 2 horas",
-			"Equipamiento básico",
-			"Acceso a servicios comunes",
-			"Flexible y económico",
-		],
-	},
-	{
-		title: "Medio Tiempo",
-		description:
-			"Para profesionales que requieren uso regular pero no tiempo completo.",
-		price: "$500/mes",
-		icon: FaCalendarAlt,
-		features: [
-			"4 horas diarias",
-			"Mobiliario incluido",
-			"Servicios básicos",
-			"Ideal para especialistas",
-		],
-	},
-	{
 		title: "Tiempo Completo",
 		description: "Para profesionales que requieren uso exclusivo del espacio.",
-		price: "$800/mes",
+		price: "$125/mes + IVA",
 		icon: FaKey,
 		features: [
-			"Uso exclusivo 24/7",
-			"Equipamiento completo",
-			"Servicios premium",
-			"Personalización incluida",
+			"Consultas en horario de 8:00 AM a 6:00 PM bajo cita previa",
+			"Agendamiento con recepcionista",
+			"Incluye contrato",
+		],
+	},
+	{
+		title: "Horario Matutino",
+		description: "Ideal para consultas esporádicas o servicios específicos.",
+		price: "$100/mes + IVA",
+		icon: FaSun,
+		features: [
+			"Consultas a partir de 8:00 AM a 12:00 PM",
+			"Agendamiento con recepcionista",
+			"Incluye contrato",
+		],
+	},
+	{
+		title: "Horario Vespertino",
+		description:
+			"Para profesionales que requieren uso regular pero no tiempo completo.",
+		price: "$115/mes + IVA",
+		icon: FaMoon,
+		features: [
+			"Consultas a partir de 12:00 PM a 6:00 PM",
+			"Agendamiento con recepcionista",
+			"Incluye contrato",
 		],
 	},
 ];

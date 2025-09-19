@@ -2,6 +2,7 @@ import { BiClinic } from "react-icons/bi";
 import { ImLab } from "react-icons/im";
 import { LiaPillsSolid } from "react-icons/lia";
 import { PiTowel, PiTruckTrailer } from "react-icons/pi";
+import { GoPasskeyFill } from "react-icons/go";
 
 export type SiteConfig = typeof siteConfig;
 
@@ -122,18 +123,14 @@ export const siteConfig = {
 	],
 	services: [
 		{
-			label: "Clinica",
+			label: "Clinica CAMI",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
+				"Ofrecemos consultas médicas en diversas especialidades, con atención personalizada y tecnología de vanguardia. Además, brindamos planes de alquiler de espacios para médicos y capacitaciones empresariales en salud.",
 			icon: BiClinic,
 			tags: [
 				{
 					label: "Consulta Medica",
 					href: "/clinica/consulta-medica",
-				},
-				{
-					label: "Asesoria",
-					href: "/clinica/asesoria",
 				},
 				{
 					label: "Alquiler",
@@ -148,7 +145,7 @@ export const siteConfig = {
 		{
 			label: "Farmacurate",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
+				"Farmacia especializada en atención a empresas. Creamos kits personalizados según las necesidades de cada organización, garantizando eficiencia, calidad y cumplimiento normativo.",
 			icon: LiaPillsSolid,
 			tags: [
 				{ label: "Empresas", href: "/farmacurate/empresas" },
@@ -156,9 +153,9 @@ export const siteConfig = {
 			],
 		},
 		{
-			label: "Laboratorio",
+			label: "Laboratorio CAMI",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
+				"Laboratorio clínico confiable y moderno, con análisis precisos y entrega rápida de resultados. Ideal para empresas, clínicas y pacientes individuales que buscan excelencia diagnóstica.",
 			icon: ImLab,
 			tags: [
 				{ label: "Servicios", href: "/laboratorio/servicios" },
@@ -166,9 +163,9 @@ export const siteConfig = {
 			],
 		},
 		{
-			label: "Spa",
+			label: "Spa CAMI",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
+				"Centro de relajación y fisiatría que combina bienestar físico y mental. Ofrecemos terapias corporales, masajes especializados y atención fisiátrica para recuperación y equilibrio.",
 			icon: PiTowel,
 			tags: [
 				{ label: "Servicios", href: "/spa/servicios" },
@@ -176,14 +173,21 @@ export const siteConfig = {
 			],
 		},
 		{
-			label: "Importadora",
+			label: "CAMI Importadora",
 			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex urna, vulputate vitae mi vel, faucibus tempor mi. Sed viverra.",
+				"Importamos equipos y productos clínicos desde cualquier país, con opciones de financiamiento flexibles. Facilitamos el acceso a tecnología médica de calidad para clínicas y profesionales.",
 			icon: PiTruckTrailer,
 			tags: [
 				{ label: "Equipo", href: "/importadora/equipo" },
 				{ label: "Financiamiento", href: "/importadora/financiamiento" },
 			],
+		},
+		{
+			label: "MedKey",
+			description:
+				"La llave para abrir tu clínica. Te ayudamos a construir tu clínica desde cero. Desde el modelo de negocio, selección de equipos, cumplimiento legal, hasta la operación diaria. Acompañamos tu proyecto con visión estratégica y experiencia.",
+			icon: GoPasskeyFill,
+			tags: [{ label: "Asesoria", href: "/clinica/asesoria" }],
 		},
 	],
 	values: [

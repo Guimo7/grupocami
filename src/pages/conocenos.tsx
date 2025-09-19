@@ -13,7 +13,7 @@ export default function ConocenosPage() {
 				{/* Hero Section */}
 				<section className="text-center mb-16">
 					<h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-						Grupo Cami
+						Grupo CAMI
 					</h1>
 					<p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
 						Crecimiento sostenible, basado en la confianza, la calidad y el

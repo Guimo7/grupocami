@@ -15,6 +15,8 @@ import {
 	NavbarMenu,
 	NavbarMenuItem,
 	NavbarMenuToggle,
+	Accordion,
+	AccordionItem,
 } from "@heroui/react";
 import { animate } from "animejs";
 import { clsx } from "clsx";
@@ -30,6 +32,10 @@ export const Navbar = () => {
 	const underlineRefs = useRef<(HTMLSpanElement | null)[]>([]);
 	// State for submenu toggle
 	const [openSubmenuIndex, setOpenSubmenuIndex] = useState<number | null>(null);
+	// State for mobile submenu toggle
+	const [openMobileSubmenuIndex, setOpenMobileSubmenuIndex] = useState<
+		number | null
+	>(null);
 	// Ref for navbar
 	const navbarRef = useRef<HTMLElement | null>(null);
 
@@ -55,6 +61,13 @@ export const Navbar = () => {
 		setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
 	};
 
+	// Toggle mobile submenu (close if clicking the same item, otherwise open)
+	const toggleMobileSubmenu = (index: number) => {
+		setOpenMobileSubmenuIndex((prevIndex) =>
+			prevIndex === index ? null : index,
+		);
+	};
+
 	// Close dropdowns on any click within or outside the navbar
 	useEffect(() => {
 		const handleClick = (event: MouseEvent) => {
@@ -66,9 +79,11 @@ export const Navbar = () => {
 				if (navbarRef.current.contains(event.target)) {
 					// Close dropdowns when clicking within the navbar
 					setOpenSubmenuIndex(null);
+					setOpenMobileSubmenuIndex(null);
 				} else {
 					// Close dropdowns when clicking outside the navbar (e.g., page content)
 					setOpenSubmenuIndex(null);
+					setOpenMobileSubmenuIndex(null);
 				}
 			}
 		};
@@ -83,7 +98,8 @@ export const Navbar = () => {
 			maxWidth="xl"
 			position="sticky"
 			height={64}
-			className="flex items-center"
+			shouldHideOnScroll={false}
+			className="flex items-center fixed top-0 left-0 right-0 z-[9999] bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
 		>
 			{/* Branding */}
 			<NavbarBrand className="flex items-center gap-2 max-w-fit">
@@ -161,7 +177,10 @@ export const Navbar = () => {
 									"text-primary font-semibold relative",
 									"data-[active=true]:text-primary data-[active=true]:font-medium",
 								)}
-								onClick={() => setOpenSubmenuIndex(null)} // Close dropdowns on click
+								onClick={() => {
+									setOpenSubmenuIndex(null);
+									setOpenMobileSubmenuIndex(null);
+								}} // Close dropdowns on click
 								onMouseEnter={() => handleMouseEnter(index)}
 								onMouseLeave={() => handleMouseLeave(index)}
 							>
@@ -182,57 +201,44 @@ export const Navbar = () => {
 			</NavbarContent>
 
 			{/* Collapsible Menu for Smaller Screens */}
-			<NavbarMenu>
-				<div className="mx-4 mt-2 flex flex-col gap-2">
+			<NavbarMenu className="bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg">
+				<div className="mx-4 mt-4 flex flex-col gap-3">
 					{siteConfig.navMenuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item.href}-${index}`}>
 							{item.submenu ? (
-								<div>
-									<button
-										onClick={() => toggleSubmenu(index)}
-										className="w-full text-left text-lg font-semibold text-primary flex items-center gap-2"
-										aria-expanded={openSubmenuIndex === index}
-										aria-haspopup="true"
+								<Accordion variant="light" className="p-0">
+									<AccordionItem
+										key={item.href}
+										aria-label={item.label}
+										title={
+											<span className="text-lg font-semibold text-primary">
+												{item.label}
+											</span>
+										}
+										className="px-0"
 									>
-										{item.label}
-										<ChevronDownIcon
-											className={clsx(
-												"w-5 h-5 transition-transform duration-200",
-												openSubmenuIndex === index ? "rotate-180" : "rotate-0",
-											)}
-										/>
-									</button>
-									{openSubmenuIndex === index && (
-										<div className="ml-4 flex flex-col gap-1 mt-2">
+										<div className="flex flex-col gap-1 pl-4">
 											{item.submenu.map((subItem) => (
 												<Link
 													key={subItem.href}
 													to={subItem.href}
-													className="block text-sm text-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md hover:bg-primary/10"
-													onClick={() => setOpenSubmenuIndex(null)}
+													className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-200"
+													onClick={() => setOpenMobileSubmenuIndex(null)}
 												>
 													{subItem.label}
 												</Link>
 											))}
 										</div>
-									)}
-								</div>
+									</AccordionItem>
+								</Accordion>
 							) : (
-								<HeroUILink
-									as={Link}
+								<Link
 									to={item.href}
-									color={
-										index === 2
-											? "primary"
-											: index === siteConfig.navMenuItems.length - 1
-												? "danger"
-												: "foreground"
-									}
-									size="lg"
-									onClick={() => setOpenSubmenuIndex(null)} // Close dropdowns on click
+									className="block text-lg font-semibold text-primary py-2 rounded-md hover:bg-blue-50 transition-colors duration-200"
+									onClick={() => setOpenMobileSubmenuIndex(null)}
 								>
 									{item.label}
-								</HeroUILink>
+								</Link>
 							)}
 						</NavbarMenuItem>
 					))}
