@@ -10,16 +10,9 @@ import {
 	TableHeader,
 	TableRow,
 } from "@heroui/react";
-import { BiCheck, BiHome, BiPlus, BiShield } from "react-icons/bi";
-import {
-	FaBuilding,
-	FaIndustry,
-	FaShoppingCart,
-	FaTruck,
-	FaWhatsapp,
-} from "react-icons/fa";
+import { BiHome } from "react-icons/bi";
+import { FaBuilding, FaWhatsapp } from "react-icons/fa";
 import { LiaPillsSolid } from "react-icons/lia";
-import { MdSecurity } from "react-icons/md";
 import { subtitle, title } from "@/components/primitives";
 import { handleWhatsAppClick } from "@/helpers";
 import DefaultLayout from "@/layouts/default";

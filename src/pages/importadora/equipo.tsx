@@ -1,8 +1,7 @@
-import { Button, Card, CardBody, CardHeader } from "@heroui/react";
-import { BiCheck, BiShield, BiSupport } from "react-icons/bi";
-import { FaHeartbeat, FaMicroscope, FaXRay } from "react-icons/fa";
-import { GiMicroscope } from "react-icons/gi";
-import { MdLocalHospital, MdMedicalServices, MdMonitor } from "react-icons/md";
+import { Button, Card, CardBody } from "@heroui/react";
+import { BiCheck, BiSupport } from "react-icons/bi";
+import { FaXRay } from "react-icons/fa";
+import { MdLocalHospital, MdMonitor } from "react-icons/md";
 import { PiTruckTrailer } from "react-icons/pi";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { subtitle, title } from "@/components/primitives";

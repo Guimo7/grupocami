@@ -9,7 +9,6 @@ import {
 	Accordion,
 	AccordionItem,
 	Navbar as HeroNavbar,
-	Link as HeroUILink,
 	Image,
 	NavbarBrand,
 	NavbarContent,
@@ -32,10 +31,7 @@ export const Navbar = () => {
 	const underlineRefs = useRef<(HTMLSpanElement | null)[]>([]);
 	// State for submenu toggle
 	const [openSubmenuIndex, setOpenSubmenuIndex] = useState<number | null>(null);
-	// State for mobile submenu toggle
-	const [openMobileSubmenuIndex, setOpenMobileSubmenuIndex] = useState<
-		number | null
-	>(null);
+
 	// Ref for navbar
 	const navbarRef = useRef<HTMLElement | null>(null);
 
@@ -61,13 +57,6 @@ export const Navbar = () => {
 		setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
 	};
 
-	// Toggle mobile submenu (close if clicking the same item, otherwise open)
-	const toggleMobileSubmenu = (index: number) => {
-		setOpenMobileSubmenuIndex((prevIndex) =>
-			prevIndex === index ? null : index,
-		);
-	};
-
 	// Close dropdowns on any click within or outside the navbar
 	useEffect(() => {
 		const handleClick = (event: MouseEvent) => {
@@ -79,11 +68,9 @@ export const Navbar = () => {
 				if (navbarRef.current.contains(event.target)) {
 					// Close dropdowns when clicking within the navbar
 					setOpenSubmenuIndex(null);
-					setOpenMobileSubmenuIndex(null);
 				} else {
 					// Close dropdowns when clicking outside the navbar (e.g., page content)
 					setOpenSubmenuIndex(null);
-					setOpenMobileSubmenuIndex(null);
 				}
 			}
 		};
@@ -179,7 +166,6 @@ export const Navbar = () => {
 								)}
 								onClick={() => {
 									setOpenSubmenuIndex(null);
-									setOpenMobileSubmenuIndex(null);
 								}} // Close dropdowns on click
 								onMouseEnter={() => handleMouseEnter(index)}
 								onMouseLeave={() => handleMouseLeave(index)}
@@ -223,7 +209,6 @@ export const Navbar = () => {
 													key={subItem.href}
 													to={subItem.href}
 													className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 px-3 py-2 rounded-md hover:bg-blue-200"
-													onClick={() => setOpenMobileSubmenuIndex(null)}
 												>
 													{subItem.label}
 												</Link>
@@ -235,7 +220,6 @@ export const Navbar = () => {
 								<Link
 									to={item.href}
 									className="block text-lg font-semibold text-primary py-2 rounded-md hover:bg-blue-50 transition-colors duration-200"
-									onClick={() => setOpenMobileSubmenuIndex(null)}
 								>
 									{item.label}
 								</Link>

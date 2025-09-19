@@ -3,7 +3,6 @@ import {
 	BiArchive,
 	BiBuilding,
 	BiCloudLightning,
-	BiMoney,
 	BiNetworkChart,
 	BiPaperclip,
 	BiTime,
@@ -11,7 +10,6 @@ import {
 	BiWifi,
 } from "react-icons/bi";
 import {
-	FaCalendarAlt,
 	FaKey,
 	FaMoon,
 	FaStethoscope,

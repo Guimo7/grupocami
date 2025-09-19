@@ -3,7 +3,6 @@ import { Button, Card, CardBody, CardFooter, Chip } from "@heroui/react";
 import { BiClinic } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { subtitle, title } from "@/components/primitives";
-import { siteConfig } from "@/config/site";
 import { handleWhatsAppClick } from "@/helpers";
 import DefaultLayout from "@/layouts/default";
 import Doctor6 from "/doctor6.png";
