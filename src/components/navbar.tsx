@@ -6,6 +6,8 @@ import {
 	DropdownTrigger,
 } from "@heroui/dropdown";
 import {
+	Accordion,
+	AccordionItem,
 	Navbar as HeroNavbar,
 	Link as HeroUILink,
 	Image,
@@ -15,8 +17,6 @@ import {
 	NavbarMenu,
 	NavbarMenuItem,
 	NavbarMenuToggle,
-	Accordion,
-	AccordionItem,
 } from "@heroui/react";
 import { animate } from "animejs";
 import { clsx } from "clsx";

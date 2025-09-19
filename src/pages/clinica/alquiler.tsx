@@ -21,8 +21,8 @@ import {
 } from "react-icons/fa";
 import { MdSecurity } from "react-icons/md";
 import { subtitle, title } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
 import { handleWhatsAppClick } from "@/helpers";
+import DefaultLayout from "@/layouts/default";
 
 export default function AlquilerPage() {
 	return (

@@ -1,10 +1,9 @@
 import { Image } from "@heroui/react";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { siteConfig } from "@/config/site";
-import { Map } from "./map";
-
 // Import logo
 import logoRectangulo from "/Logo_Rectangulo.svg";
+import { Map } from "./map";
 
 export const Footer = () => {
 	return (

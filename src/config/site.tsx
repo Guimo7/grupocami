@@ -1,8 +1,8 @@
 import { BiClinic } from "react-icons/bi";
+import { GoPasskeyFill } from "react-icons/go";
 import { ImLab } from "react-icons/im";
 import { LiaPillsSolid } from "react-icons/lia";
 import { PiTowel, PiTruckTrailer } from "react-icons/pi";
-import { GoPasskeyFill } from "react-icons/go";
 
 export type SiteConfig = typeof siteConfig;
 

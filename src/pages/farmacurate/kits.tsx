@@ -21,8 +21,8 @@ import {
 import { LiaPillsSolid } from "react-icons/lia";
 import { MdSecurity } from "react-icons/md";
 import { subtitle, title } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
 import { handleWhatsAppClick } from "@/helpers";
+import DefaultLayout from "@/layouts/default";
 
 const medicalKits = [
 	{
