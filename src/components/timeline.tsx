@@ -1,7 +1,8 @@
 import { Accordion, AccordionItem } from "@heroui/accordion";
 import { Button } from "@heroui/button";
-import { Link } from "@heroui/react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { siteConfig } from "@/config/site";
 
 const milestones = [
 	{
@@ -125,9 +126,8 @@ export const Timeline = () => {
 							variant="ghost"
 							className="hover:text-white font-semibold"
 							color="primary"
-							href="/conocenos"
 							as={Link}
-							target="_top"
+							to={siteConfig.navItems[1].href}
 						>
 							Conocenos
 							<svg
